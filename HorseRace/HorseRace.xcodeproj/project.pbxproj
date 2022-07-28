@@ -1,0 +1,588 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3296D0A92892BDE3001C1847 /* HorseRaceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3296D0A82892BDE3001C1847 /* HorseRaceApp.swift */; };
+		3296D0AB2892BDE3001C1847 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3296D0AA2892BDE3001C1847 /* ContentView.swift */; };
+		3296D0AD2892BDE4001C1847 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3296D0AC2892BDE4001C1847 /* Assets.xcassets */; };
+		3296D0B02892BDE4001C1847 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3296D0AF2892BDE4001C1847 /* Preview Assets.xcassets */; };
+		3296D0BA2892BDE4001C1847 /* HorseRaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3296D0B92892BDE4001C1847 /* HorseRaceTests.swift */; };
+		3296D0C42892BDE4001C1847 /* HorseRaceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3296D0C32892BDE4001C1847 /* HorseRaceUITests.swift */; };
+		3296D0C62892BDE4001C1847 /* HorseRaceUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3296D0C52892BDE4001C1847 /* HorseRaceUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3296D0B62892BDE4001C1847 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3296D09D2892BDE3001C1847 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3296D0A42892BDE3001C1847;
+			remoteInfo = HorseRace;
+		};
+		3296D0C02892BDE4001C1847 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3296D09D2892BDE3001C1847 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3296D0A42892BDE3001C1847;
+			remoteInfo = HorseRace;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3296D0A52892BDE3001C1847 /* HorseRace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HorseRace.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3296D0A82892BDE3001C1847 /* HorseRaceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorseRaceApp.swift; sourceTree = "<group>"; };
+		3296D0AA2892BDE3001C1847 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		3296D0AC2892BDE4001C1847 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3296D0AF2892BDE4001C1847 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3296D0B52892BDE4001C1847 /* HorseRaceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HorseRaceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3296D0B92892BDE4001C1847 /* HorseRaceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorseRaceTests.swift; sourceTree = "<group>"; };
+		3296D0BF2892BDE4001C1847 /* HorseRaceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HorseRaceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3296D0C32892BDE4001C1847 /* HorseRaceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorseRaceUITests.swift; sourceTree = "<group>"; };
+		3296D0C52892BDE4001C1847 /* HorseRaceUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorseRaceUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3296D0A22892BDE3001C1847 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3296D0B22892BDE4001C1847 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3296D0BC2892BDE4001C1847 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3296D09C2892BDE3001C1847 = {
+			isa = PBXGroup;
+			children = (
+				3296D0A72892BDE3001C1847 /* HorseRace */,
+				3296D0B82892BDE4001C1847 /* HorseRaceTests */,
+				3296D0C22892BDE4001C1847 /* HorseRaceUITests */,
+				3296D0A62892BDE3001C1847 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3296D0A62892BDE3001C1847 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3296D0A52892BDE3001C1847 /* HorseRace.app */,
+				3296D0B52892BDE4001C1847 /* HorseRaceTests.xctest */,
+				3296D0BF2892BDE4001C1847 /* HorseRaceUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3296D0A72892BDE3001C1847 /* HorseRace */ = {
+			isa = PBXGroup;
+			children = (
+				3296D0A82892BDE3001C1847 /* HorseRaceApp.swift */,
+				3296D0AA2892BDE3001C1847 /* ContentView.swift */,
+				3296D0AC2892BDE4001C1847 /* Assets.xcassets */,
+				3296D0AE2892BDE4001C1847 /* Preview Content */,
+			);
+			path = HorseRace;
+			sourceTree = "<group>";
+		};
+		3296D0AE2892BDE4001C1847 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				3296D0AF2892BDE4001C1847 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3296D0B82892BDE4001C1847 /* HorseRaceTests */ = {
+			isa = PBXGroup;
+			children = (
+				3296D0B92892BDE4001C1847 /* HorseRaceTests.swift */,
+			);
+			path = HorseRaceTests;
+			sourceTree = "<group>";
+		};
+		3296D0C22892BDE4001C1847 /* HorseRaceUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3296D0C32892BDE4001C1847 /* HorseRaceUITests.swift */,
+				3296D0C52892BDE4001C1847 /* HorseRaceUITestsLaunchTests.swift */,
+			);
+			path = HorseRaceUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3296D0A42892BDE3001C1847 /* HorseRace */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3296D0C92892BDE4001C1847 /* Build configuration list for PBXNativeTarget "HorseRace" */;
+			buildPhases = (
+				3296D0A12892BDE3001C1847 /* Sources */,
+				3296D0A22892BDE3001C1847 /* Frameworks */,
+				3296D0A32892BDE3001C1847 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HorseRace;
+			productName = HorseRace;
+			productReference = 3296D0A52892BDE3001C1847 /* HorseRace.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3296D0B42892BDE4001C1847 /* HorseRaceTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3296D0CC2892BDE4001C1847 /* Build configuration list for PBXNativeTarget "HorseRaceTests" */;
+			buildPhases = (
+				3296D0B12892BDE4001C1847 /* Sources */,
+				3296D0B22892BDE4001C1847 /* Frameworks */,
+				3296D0B32892BDE4001C1847 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3296D0B72892BDE4001C1847 /* PBXTargetDependency */,
+			);
+			name = HorseRaceTests;
+			productName = HorseRaceTests;
+			productReference = 3296D0B52892BDE4001C1847 /* HorseRaceTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3296D0BE2892BDE4001C1847 /* HorseRaceUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3296D0CF2892BDE4001C1847 /* Build configuration list for PBXNativeTarget "HorseRaceUITests" */;
+			buildPhases = (
+				3296D0BB2892BDE4001C1847 /* Sources */,
+				3296D0BC2892BDE4001C1847 /* Frameworks */,
+				3296D0BD2892BDE4001C1847 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3296D0C12892BDE4001C1847 /* PBXTargetDependency */,
+			);
+			name = HorseRaceUITests;
+			productName = HorseRaceUITests;
+			productReference = 3296D0BF2892BDE4001C1847 /* HorseRaceUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3296D09D2892BDE3001C1847 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					3296D0A42892BDE3001C1847 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					3296D0B42892BDE4001C1847 = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = 3296D0A42892BDE3001C1847;
+					};
+					3296D0BE2892BDE4001C1847 = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = 3296D0A42892BDE3001C1847;
+					};
+				};
+			};
+			buildConfigurationList = 3296D0A02892BDE3001C1847 /* Build configuration list for PBXProject "HorseRace" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3296D09C2892BDE3001C1847;
+			productRefGroup = 3296D0A62892BDE3001C1847 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3296D0A42892BDE3001C1847 /* HorseRace */,
+				3296D0B42892BDE4001C1847 /* HorseRaceTests */,
+				3296D0BE2892BDE4001C1847 /* HorseRaceUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3296D0A32892BDE3001C1847 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3296D0B02892BDE4001C1847 /* Preview Assets.xcassets in Resources */,
+				3296D0AD2892BDE4001C1847 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3296D0B32892BDE4001C1847 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3296D0BD2892BDE4001C1847 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3296D0A12892BDE3001C1847 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3296D0AB2892BDE3001C1847 /* ContentView.swift in Sources */,
+				3296D0A92892BDE3001C1847 /* HorseRaceApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3296D0B12892BDE4001C1847 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3296D0BA2892BDE4001C1847 /* HorseRaceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3296D0BB2892BDE4001C1847 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3296D0C42892BDE4001C1847 /* HorseRaceUITests.swift in Sources */,
+				3296D0C62892BDE4001C1847 /* HorseRaceUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3296D0B72892BDE4001C1847 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3296D0A42892BDE3001C1847 /* HorseRace */;
+			targetProxy = 3296D0B62892BDE4001C1847 /* PBXContainerItemProxy */;
+		};
+		3296D0C12892BDE4001C1847 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3296D0A42892BDE3001C1847 /* HorseRace */;
+			targetProxy = 3296D0C02892BDE4001C1847 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		3296D0C72892BDE4001C1847 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3296D0C82892BDE4001C1847 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3296D0CA2892BDE4001C1847 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"HorseRace/Preview Content\"";
+				DEVELOPMENT_TEAM = FRZRS5Y9L6;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.changBro.HorseRace;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3296D0CB2892BDE4001C1847 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"HorseRace/Preview Content\"";
+				DEVELOPMENT_TEAM = FRZRS5Y9L6;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.changBro.HorseRace;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3296D0CD2892BDE4001C1847 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FRZRS5Y9L6;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.changBro.HorseRaceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HorseRace.app/HorseRace";
+			};
+			name = Debug;
+		};
+		3296D0CE2892BDE4001C1847 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FRZRS5Y9L6;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.changBro.HorseRaceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HorseRace.app/HorseRace";
+			};
+			name = Release;
+		};
+		3296D0D02892BDE4001C1847 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FRZRS5Y9L6;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.changBro.HorseRaceUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HorseRace;
+			};
+			name = Debug;
+		};
+		3296D0D12892BDE4001C1847 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FRZRS5Y9L6;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.changBro.HorseRaceUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HorseRace;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3296D0A02892BDE3001C1847 /* Build configuration list for PBXProject "HorseRace" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3296D0C72892BDE4001C1847 /* Debug */,
+				3296D0C82892BDE4001C1847 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3296D0C92892BDE4001C1847 /* Build configuration list for PBXNativeTarget "HorseRace" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3296D0CA2892BDE4001C1847 /* Debug */,
+				3296D0CB2892BDE4001C1847 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3296D0CC2892BDE4001C1847 /* Build configuration list for PBXNativeTarget "HorseRaceTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3296D0CD2892BDE4001C1847 /* Debug */,
+				3296D0CE2892BDE4001C1847 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3296D0CF2892BDE4001C1847 /* Build configuration list for PBXNativeTarget "HorseRaceUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3296D0D02892BDE4001C1847 /* Debug */,
+				3296D0D12892BDE4001C1847 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3296D09D2892BDE3001C1847 /* Project object */;
+}
