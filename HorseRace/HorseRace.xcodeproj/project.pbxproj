@@ -14,6 +14,7 @@
 		3296D0BA2892BDE4001C1847 /* HorseRaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3296D0B92892BDE4001C1847 /* HorseRaceTests.swift */; };
 		3296D0C42892BDE4001C1847 /* HorseRaceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3296D0C32892BDE4001C1847 /* HorseRaceUITests.swift */; };
 		3296D0C62892BDE4001C1847 /* HorseRaceUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3296D0C52892BDE4001C1847 /* HorseRaceUITestsLaunchTests.swift */; };
+		B9E1220328B3C5C400932AAE /* GameProcessingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E1220228B3C5C400932AAE /* GameProcessingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		3296D0BF2892BDE4001C1847 /* HorseRaceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HorseRaceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3296D0C32892BDE4001C1847 /* HorseRaceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorseRaceUITests.swift; sourceTree = "<group>"; };
 		3296D0C52892BDE4001C1847 /* HorseRaceUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorseRaceUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B9E1220228B3C5C400932AAE /* GameProcessingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameProcessingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			children = (
 				3296D0A82892BDE3001C1847 /* HorseRaceApp.swift */,
 				3296D0AA2892BDE3001C1847 /* ContentView.swift */,
+				B9E1220228B3C5C400932AAE /* GameProcessingView.swift */,
 				3296D0AC2892BDE4001C1847 /* Assets.xcassets */,
 				3296D0AE2892BDE4001C1847 /* Preview Content */,
 			);
@@ -259,6 +262,7 @@
 			files = (
 				3296D0AB2892BDE3001C1847 /* ContentView.swift in Sources */,
 				3296D0A92892BDE3001C1847 /* HorseRaceApp.swift in Sources */,
+				B9E1220328B3C5C400932AAE /* GameProcessingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,14 +421,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HorseRace/Preview Content\"";
-				DEVELOPMENT_TEAM = FRZRS5Y9L6;
+				DEVELOPMENT_TEAM = BQSHS2D2FB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -446,14 +450,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HorseRace/Preview Content\"";
-				DEVELOPMENT_TEAM = FRZRS5Y9L6;
+				DEVELOPMENT_TEAM = BQSHS2D2FB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
