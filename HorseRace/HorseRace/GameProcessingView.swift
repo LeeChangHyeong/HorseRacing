@@ -10,30 +10,63 @@ import SpriteKit
 
 struct GameProcessingView: View {
     @State private var start: Bool = false
+    @State private var count = 3
     
     var body: some View {
         
         ZStack {
-            numView
-            
             SpriteView(scene: HorseRunningScene(size: CGSize(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)))
                 .ignoresSafeArea()
+            
+            if count > 0 {
+                numView
+            } else if count == 0{
+                startMessage
+            }
         }
     }
     
+    // 우선은 onAppear, onChange에 asyncAfter를 활용했는데, Timer를 직접 활용하는게 나을 수도 있을 것 같습니다
     private var numView: some View {
-        ZStack() {
-            
+        Text("\(count)")
+            .font(.custom("Copperplate", size: 120))
+            .foregroundColor(.white)
+            .onAppear {
+                countDown()
+            }
+            .onChange(of: count) { _ in
+                countDown()
+            }
+    }
+    
+    private var startMessage: some View {
+        Text("Start!")
+            .font(.custom("Copperplate", size: 80))
+            .foregroundColor(.white)
+            .onAppear {
+                countDown()
+            }
+    }
+    
+    private func countDown() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            withAnimation(.easeInOut) {
+                count -= 1
+            }
         }
     }
 }
 
 
+// MARK: Horse Running Animation SpriteKit Scene
 class HorseRunningScene: SKScene {
     
     let backgroundStart = SKSpriteNode(imageNamed: "backgroundStart")
     let backgroundMiddle = SKSpriteNode(imageNamed: "backgroundMiddle")
     
+    let horseCount: Int = 6// 말 마리 수 받아오기
+    
+    private var colorArray: [String] = ["red", "green", "blue", "red2", "green2", "blue2"]
     private var horse: [String: SKSpriteNode] = [:]
     private var horseRunningFrames: [SKTexture] = []
     
@@ -51,14 +84,13 @@ class HorseRunningScene: SKScene {
         backgroundMiddle.zPosition = -10
         addChild(backgroundMiddle)
         
-        buildHorse(color: "red")
-        //animateHorse(color: "red", speed: 30)
+        colorArray.shuffle()
         
-        buildHorse(color: "green")
-        //animateHorse(color: "green", speed: 30)
+        for i in 1...horseCount {
+            buildHorse(color: colorArray[i-1])
+        }
         
-        buildHorse(color: "blue")
-        //animateHorse(color: "blue", speed: 30)
+        print("\(horseCount) horses")
         
     }
     
@@ -101,7 +133,8 @@ class HorseRunningScene: SKScene {
         horse[color] = SKSpriteNode(texture: firstFrameTexture)
         
         if let horseNode = horse[color] {
-            horseNode.position = CGPoint(x: frame.minX + 100, y: frame.midY + 100 * CGFloat.random(in: -1...1))
+            horseNode.position = CGPoint(x: frame.minX + 180, y: UIScreen.main.bounds.height / CGFloat((horseCount) + 1) * CGFloat((colorArray.firstIndex(of: color)!) + 1) - CGFloat(40))
+            horseNode.zPosition = -CGFloat(colorArray.firstIndex(of: color)!)  // 위에 있는 말이 뒤로 가도록 zPosition 지정 필요
             horseNode.size = CGSize(width: 188, height: 106)
             addChild(horseNode)
             
@@ -130,7 +163,7 @@ class HorseRunningScene: SKScene {
         // 앞의 두 Action을 순서대로 수행
         if let horseNode = horse[color] {
             horseNode.run(SKAction.sequence([waiting, runningAction]),
-                withKey: "\(color)HorseRunning"
+                          withKey: "\(color)HorseRunning"
             )
         }
     }
