@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3284738A28B4C15100BF498D /* FinalGameProcessingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3284738928B4C15100BF498D /* FinalGameProcessingView.swift */; };
 		3296D0A92892BDE3001C1847 /* HorseRaceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3296D0A82892BDE3001C1847 /* HorseRaceApp.swift */; };
 		3296D0AB2892BDE3001C1847 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3296D0AA2892BDE3001C1847 /* ContentView.swift */; };
 		3296D0AD2892BDE4001C1847 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3296D0AC2892BDE4001C1847 /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3284738928B4C15100BF498D /* FinalGameProcessingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalGameProcessingView.swift; sourceTree = "<group>"; };
 		3296D0A52892BDE3001C1847 /* HorseRace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HorseRace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3296D0A82892BDE3001C1847 /* HorseRaceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorseRaceApp.swift; sourceTree = "<group>"; };
 		3296D0AA2892BDE3001C1847 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				3296D0A82892BDE3001C1847 /* HorseRaceApp.swift */,
 				3296D0AA2892BDE3001C1847 /* ContentView.swift */,
 				B9E1220228B3C5C400932AAE /* GameProcessingView.swift */,
+				3284738928B4C15100BF498D /* FinalGameProcessingView.swift */,
 				B9C64F8728B459290008AF30 /* redHorseImages.atlas */,
 				B9C64F8928B464860008AF30 /* greenHorseImages.atlas */,
 				B9C64F8C28B464A20008AF30 /* blueHorseImages.atlas */,
@@ -272,6 +275,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3284738A28B4C15100BF498D /* FinalGameProcessingView.swift in Sources */,
 				3296D0AB2892BDE3001C1847 /* ContentView.swift in Sources */,
 				3296D0A92892BDE3001C1847 /* HorseRaceApp.swift in Sources */,
 				B9E1220328B3C5C400932AAE /* GameProcessingView.swift in Sources */,
