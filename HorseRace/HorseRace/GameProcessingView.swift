@@ -64,7 +64,7 @@ class HorseRunningScene: SKScene {
     let backgroundStart = SKSpriteNode(imageNamed: "backgroundStart")
     let backgroundMiddle = SKSpriteNode(imageNamed: "backgroundMiddle")
     
-    let horseCount: Int = 6// 말 마리 수 받아오기
+    let horseCount: Int = Int.random(in: 2...6)  // 말 마리 수 받아오기
     
     private var colorArray: [String] = ["red", "green", "blue", "red2", "green2", "blue2"]
     private var horse: [String: SKSpriteNode] = [:]
@@ -107,8 +107,9 @@ class HorseRunningScene: SKScene {
                 backgroundMiddle.position.x += backgroundMiddle.size.width
             }
             
+            // 말의 움직임 속도 (x축 이동)
             for horseColor in horse.keys {
-                horse[horseColor]?.position.x += CGFloat.random(in: -2...3)
+                horse[horseColor]?.position.x += CGFloat.random(in: -3...4)
             }
         }
     }
@@ -122,7 +123,9 @@ class HorseRunningScene: SKScene {
         let horseAnimatedAtlas = SKTextureAtlas(named: "\(color)HorseImages")
         var runFrames: [SKTexture] = []
         
+        let horseSpeed: Double = 40
         let numImages = horseAnimatedAtlas.textureNames.count
+        
         for i in 1...numImages {
             let horseTextureName = "\(color)Horse\(i)"
             runFrames.append(horseAnimatedAtlas.textureNamed(horseTextureName))
@@ -133,7 +136,7 @@ class HorseRunningScene: SKScene {
         horse[color] = SKSpriteNode(texture: firstFrameTexture)
         
         if let horseNode = horse[color] {
-            horseNode.position = CGPoint(x: frame.minX + 180, y: UIScreen.main.bounds.height / CGFloat((horseCount) + 1) * CGFloat((colorArray.firstIndex(of: color)!) + 1) - CGFloat(40))
+            horseNode.position = CGPoint(x: frame.minX + 180, y: UIScreen.main.bounds.height / CGFloat((horseCount) + 3) * CGFloat((colorArray.firstIndex(of: color)!) + 1))
             horseNode.zPosition = -CGFloat(colorArray.firstIndex(of: color)!)  // 위에 있는 말이 뒤로 가도록 zPosition 지정 필요
             horseNode.size = CGSize(width: 188, height: 106)
             addChild(horseNode)
@@ -143,7 +146,7 @@ class HorseRunningScene: SKScene {
                 self.start = true
             }
             
-            animateHorse(color: color, speed: 30)
+            animateHorse(color: color, speed: horseSpeed)
         }
     }
     
