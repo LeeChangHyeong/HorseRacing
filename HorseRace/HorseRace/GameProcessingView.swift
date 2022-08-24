@@ -11,6 +11,9 @@ import SpriteKit
 struct GameProcessingView: View {
     @State private var start: Bool = false
     @State private var count = 3
+    @State private var animationAmount = 0.0
+    
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     var body: some View {
         
@@ -26,15 +29,17 @@ struct GameProcessingView: View {
         }
     }
     
-    // 우선은 onAppear, onChange에 asyncAfter를 활용했는데, Timer를 직접 활용하는게 나을 수도 있을 것 같습니다
     private var numView: some View {
         Text("\(count)")
             .font(.custom("Copperplate", size: 120))
             .foregroundColor(.white)
+            .rotation3DEffect(.degrees(animationAmount), axis: (x: 0.0, y: 1.0, z: 0.0))
             .onAppear {
-                countDown()
+                withAnimation {
+                    animationAmount += 360
+                }
             }
-            .onChange(of: count) { _ in
+            .onReceive(timer) { time in
                 countDown()
             }
     }
@@ -43,17 +48,21 @@ struct GameProcessingView: View {
         Text("Start!")
             .font(.custom("Copperplate", size: 80))
             .foregroundColor(.white)
-            .onAppear {
+            .onReceive(timer) { time in
                 countDown()
             }
     }
     
     private func countDown() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            withAnimation(.easeInOut) {
+        if count < 0 {
+            timer.upstream.connect().cancel()
+        } else {
+            withAnimation {
                 count -= 1
+                animationAmount += 360
             }
         }
+        
     }
 }
 
@@ -66,7 +75,7 @@ class HorseRunningScene: SKScene {
     
     let horseCount: Int = Int.random(in: 2...6)  // 말 마리 수 받아오기
     
-    private var colorArray: [String] = ["red", "green", "blue", "red2", "green2", "blue2"]
+    private var colorArray: [String] = ["red", "green", "blue", "red2", "green2", "yellow"]
     private var horse: [String: SKSpriteNode] = [:]
     private var horseRunningFrames: [SKTexture] = []
     
