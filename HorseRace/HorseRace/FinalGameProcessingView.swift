@@ -41,20 +41,21 @@ class FinalHorseRunningScene: SKScene {
             switch item {
             case 0:
                 color = "red"
-                randomSecond.append((60...180).randomElement() ?? 60 )
+                randomSecond.append((60...120).randomElement() ?? 60 )
             case 1:
                 color = "green"
-                randomSecond.append((60...180).randomElement() ?? 60 )
+                randomSecond.append((60...120).randomElement() ?? 60 )
             case 2:
                 color = "blue"
-                randomSecond.append((60...180).randomElement() ?? 60 )
+                randomSecond.append((60...120).randomElement() ?? 60 )
             default:
                 // case 3 ~ case 5 색상 지정 해주기
                 color = "blue"
-                randomSecond.append((60...180).randomElement() ?? 60 )
+                randomSecond.append((60...120).randomElement() ?? 60 )
             }
             buildHorse(color: color, horse: horseArr[item])
             animateHorse(color: color, speed: 50, horse: horseArr[item])
+            print(randomSecond)
         }
 //        buildHorse(color: "red", horse: horse)
 //        animateHorse(color: "red", speed: 50, horse: horse)
