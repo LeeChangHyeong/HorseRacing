@@ -10,15 +10,15 @@ import SpriteKit
 
 struct GameProcessingView: View {
     @State private var start: Bool = false
-    @State private var count = 3
-    @State private var animationAmount = 0.0
+    @State private var count = 6 // SKScene에 Input으로 줄 말 마리 수 (이후 Binding 형태로 수정)
+    @State private var animationAmount = -90.0
     
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     var body: some View {
         
         ZStack {
-            SpriteView(scene: HorseRunningScene(size: CGSize(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)))
+            SpriteView(scene: HorseRunningScene(size: CGSize(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height), horseCount: count))
                 .ignoresSafeArea()
             
             if count > 0 {
@@ -33,10 +33,10 @@ struct GameProcessingView: View {
         Text("\(count)")
             .font(.custom("Copperplate", size: 120))
             .foregroundColor(.white)
-            .rotation3DEffect(.degrees(animationAmount), axis: (x: 0.0, y: 1.0, z: 0.0))
+            .rotation3DEffect(.degrees(animationAmount), axis: (x: 1.0, y: 0.0, z: 0.0))
             .onAppear {
                 withAnimation {
-                    animationAmount += 360
+                    animationAmount += 90
                 }
             }
             .onReceive(timer) { time in
@@ -54,12 +54,13 @@ struct GameProcessingView: View {
     }
     
     private func countDown() {
+        animationAmount = -90
         if count < 0 {
             timer.upstream.connect().cancel()
         } else {
             withAnimation {
                 count -= 1
-                animationAmount += 360
+                animationAmount += 90
             }
         }
         
@@ -73,7 +74,7 @@ class HorseRunningScene: SKScene {
     let backgroundStart = SKSpriteNode(imageNamed: "backgroundStart")
     let backgroundMiddle = SKSpriteNode(imageNamed: "backgroundMiddle")
     
-    let horseCount: Int = Int.random(in: 2...6)  // 말 마리 수 받아오기
+    var horseCount: Int = Int.random(in: 2...6)  // 말 마리 수 받아오기
     
     private var colorArray: [String] = ["red", "green", "blue", "red2", "green2", "yellow"]
     private var horse: [String: SKSpriteNode] = [:]
@@ -81,16 +82,32 @@ class HorseRunningScene: SKScene {
     
     private var start = false
     
+    override init(size: CGSize) {
+        super.init(size: size)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // 말 마리 수를 받아 올 수 있는 initializer
+    convenience init(size: CGSize, horseCount: Int) {
+        self.init(size: size)
+        self.horseCount = horseCount
+    }
+    
     override func didMove(to view: SKView) {
         backgroundStart.anchorPoint = CGPoint.zero
         backgroundStart.position = CGPoint.zero
         backgroundStart.zPosition = -10
+        backgroundStart.size.height = frame.height
         addChild(backgroundStart)
         
         backgroundMiddle.anchorPoint = CGPoint.zero
         backgroundMiddle.position.x = backgroundStart.size.width
         backgroundMiddle.position.y = 0
         backgroundMiddle.zPosition = -10
+        backgroundMiddle.size.height = frame.height
         addChild(backgroundMiddle)
         
         colorArray.shuffle()
@@ -141,11 +158,11 @@ class HorseRunningScene: SKScene {
         }
         horseRunningFrames = runFrames
         
-        let firstFrameTexture = horseRunningFrames[4]
+        let firstFrameTexture = horseRunningFrames[Int.random(in: 3...5)]
         horse[color] = SKSpriteNode(texture: firstFrameTexture)
         
         if let horseNode = horse[color] {
-            horseNode.position = CGPoint(x: frame.minX + 180, y: UIScreen.main.bounds.height / CGFloat((horseCount) + 3) * CGFloat((colorArray.firstIndex(of: color)!) + 1))
+            horseNode.position = CGPoint(x: frame.minX + 150, y: UIScreen.main.bounds.height / CGFloat((horseCount) + 3) * CGFloat((colorArray.firstIndex(of: color)!) + 1))
             horseNode.zPosition = -CGFloat(colorArray.firstIndex(of: color)!)  // 위에 있는 말이 뒤로 가도록 zPosition 지정 필요
             horseNode.size = CGSize(width: 188, height: 106)
             addChild(horseNode)
