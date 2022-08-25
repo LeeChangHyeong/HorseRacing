@@ -9,8 +9,8 @@ import SwiftUI
 import SpriteKit
 
 struct GameProcessingView: View {
-    @State private var start: Bool = false
-    @State private var count = 6 // SKScene에 Input으로 줄 말 마리 수 (이후 Binding 형태로 수정)
+    @State private var count = 3
+    @State private var horseCount = Int.random(in: 2...6) // SKScene에 Input으로 줄 말 마리 수(이후 Binding 형태로 수정)
     @State private var animationAmount = -90.0
     
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
@@ -18,7 +18,7 @@ struct GameProcessingView: View {
     var body: some View {
         
         ZStack {
-            SpriteView(scene: HorseRunningScene(size: CGSize(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height), horseCount: count))
+            SpriteView(scene: HorseRunningScene(size: CGSize(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height), horseCount: horseCount))
                 .ignoresSafeArea()
             
             if count > 0 {
