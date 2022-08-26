@@ -21,12 +21,12 @@
 		B984829228B8434F0087457C /* horse1Images.atlas in Resources */ = {isa = PBXBuildFile; fileRef = B984828C28B8434F0087457C /* horse1Images.atlas */; };
 		B984829328B8434F0087457C /* horse2Images.atlas in Resources */ = {isa = PBXBuildFile; fileRef = B984828D28B8434F0087457C /* horse2Images.atlas */; };
 		B984829428B8434F0087457C /* horse4Images.atlas in Resources */ = {isa = PBXBuildFile; fileRef = B984828E28B8434F0087457C /* horse4Images.atlas */; };
-		B9C64F8828B459290008AF30 /* redHorseImages.atlas in Resources */ = {isa = PBXBuildFile; fileRef = B9C64F8728B459290008AF30 /* redHorseImages.atlas */; };
-		B9C64F8D28B4662C0008AF30 /* greenHorseImages.atlas in Resources */ = {isa = PBXBuildFile; fileRef = B9C64F8928B464860008AF30 /* greenHorseImages.atlas */; };
-		B9C64F8E28B4662E0008AF30 /* blueHorseImages.atlas in Resources */ = {isa = PBXBuildFile; fileRef = B9C64F8C28B464A20008AF30 /* blueHorseImages.atlas */; };
 		B9C64F9228B52A9E0008AF30 /* green2HorseImages.atlas in Resources */ = {isa = PBXBuildFile; fileRef = B9C64F9128B52A9E0008AF30 /* green2HorseImages.atlas */; };
 		B9C64F9428B52AA40008AF30 /* red2HorseImages.atlas in Resources */ = {isa = PBXBuildFile; fileRef = B9C64F9328B52AA40008AF30 /* red2HorseImages.atlas */; };
 		B9E1220328B3C5C400932AAE /* GameProcessingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E1220228B3C5C400932AAE /* GameProcessingView.swift */; };
+		CC25001F28B8ECFA007E134F /* redHorseImages.atlas in Resources */ = {isa = PBXBuildFile; fileRef = CC25001E28B8ECFA007E134F /* redHorseImages.atlas */; };
+		CC25002228B8ED02007E134F /* greenHorseImages.atlas in Resources */ = {isa = PBXBuildFile; fileRef = CC25002028B8ED02007E134F /* greenHorseImages.atlas */; };
+		CC25002328B8ED02007E134F /* blueHorseImages.atlas in Resources */ = {isa = PBXBuildFile; fileRef = CC25002128B8ED02007E134F /* blueHorseImages.atlas */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,12 +64,12 @@
 		B984828C28B8434F0087457C /* horse1Images.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = horse1Images.atlas; sourceTree = "<group>"; };
 		B984828D28B8434F0087457C /* horse2Images.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = horse2Images.atlas; sourceTree = "<group>"; };
 		B984828E28B8434F0087457C /* horse4Images.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = horse4Images.atlas; sourceTree = "<group>"; };
-		B9C64F8728B459290008AF30 /* redHorseImages.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = redHorseImages.atlas; sourceTree = "<group>"; };
-		B9C64F8928B464860008AF30 /* greenHorseImages.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = greenHorseImages.atlas; sourceTree = "<group>"; };
-		B9C64F8C28B464A20008AF30 /* blueHorseImages.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = blueHorseImages.atlas; sourceTree = "<group>"; };
 		B9C64F9128B52A9E0008AF30 /* green2HorseImages.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = green2HorseImages.atlas; sourceTree = "<group>"; };
 		B9C64F9328B52AA40008AF30 /* red2HorseImages.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = red2HorseImages.atlas; sourceTree = "<group>"; };
 		B9E1220228B3C5C400932AAE /* GameProcessingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameProcessingView.swift; sourceTree = "<group>"; };
+		CC25001E28B8ECFA007E134F /* redHorseImages.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = redHorseImages.atlas; path = ../../../../../../SideProject/HorseRacing/Images/redHorseImages.atlas; sourceTree = "<group>"; };
+		CC25002028B8ED02007E134F /* greenHorseImages.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = greenHorseImages.atlas; path = ../../../../../../SideProject/HorseRacing/Images/greenHorseImages.atlas; sourceTree = "<group>"; };
+		CC25002128B8ED02007E134F /* blueHorseImages.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = blueHorseImages.atlas; path = ../../../../../../SideProject/HorseRacing/Images/blueHorseImages.atlas; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,11 +123,8 @@
 				3296D0A82892BDE3001C1847 /* HorseRaceApp.swift */,
 				3296D0AA2892BDE3001C1847 /* ContentView.swift */,
 				B9E1220228B3C5C400932AAE /* GameProcessingView.swift */,
-				B984829528B843610087457C /* Contents */,
 				3284738928B4C15100BF498D /* FinalGameProcessingView.swift */,
-				B9C64F8728B459290008AF30 /* redHorseImages.atlas */,
-				B9C64F8928B464860008AF30 /* greenHorseImages.atlas */,
-				B9C64F8C28B464A20008AF30 /* blueHorseImages.atlas */,
+				B984829528B843610087457C /* Contents */,
 				3296D0AC2892BDE4001C1847 /* Assets.xcassets */,
 				3296D0AE2892BDE4001C1847 /* Preview Content */,
 			);
@@ -162,6 +159,9 @@
 		B984829528B843610087457C /* Contents */ = {
 			isa = PBXGroup;
 			children = (
+				CC25002128B8ED02007E134F /* blueHorseImages.atlas */,
+				CC25002028B8ED02007E134F /* greenHorseImages.atlas */,
+				CC25001E28B8ECFA007E134F /* redHorseImages.atlas */,
 				B984828C28B8434F0087457C /* horse1Images.atlas */,
 				B984828D28B8434F0087457C /* horse2Images.atlas */,
 				B984828B28B8434F0087457C /* horse3Images.atlas */,
@@ -170,9 +170,6 @@
 				B984828A28B8434F0087457C /* horse6Images.atlas */,
 				B9C64F9328B52AA40008AF30 /* red2HorseImages.atlas */,
 				B9C64F9128B52A9E0008AF30 /* green2HorseImages.atlas */,
-				B9C64F8728B459290008AF30 /* redHorseImages.atlas */,
-				B9C64F8928B464860008AF30 /* greenHorseImages.atlas */,
-				B9C64F8C28B464A20008AF30 /* blueHorseImages.atlas */,
 			);
 			path = Contents;
 			sourceTree = "<group>";
@@ -282,17 +279,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				B984829328B8434F0087457C /* horse2Images.atlas in Resources */,
+				CC25002228B8ED02007E134F /* greenHorseImages.atlas in Resources */,
 				B984829128B8434F0087457C /* horse3Images.atlas in Resources */,
-				B9C64F8828B459290008AF30 /* redHorseImages.atlas in Resources */,
-				B9C64F8D28B4662C0008AF30 /* greenHorseImages.atlas in Resources */,
 				B9C64F9228B52A9E0008AF30 /* green2HorseImages.atlas in Resources */,
 				B984829228B8434F0087457C /* horse1Images.atlas in Resources */,
+				CC25001F28B8ECFA007E134F /* redHorseImages.atlas in Resources */,
 				B984828F28B8434F0087457C /* horse5Images.atlas in Resources */,
+				CC25002328B8ED02007E134F /* blueHorseImages.atlas in Resources */,
 				B984829428B8434F0087457C /* horse4Images.atlas in Resources */,
 				B9C64F9428B52AA40008AF30 /* red2HorseImages.atlas in Resources */,
 				B984829028B8434F0087457C /* horse6Images.atlas in Resources */,
 				3296D0B02892BDE4001C1847 /* Preview Assets.xcassets in Resources */,
-				B9C64F8E28B4662E0008AF30 /* blueHorseImages.atlas in Resources */,
 				3296D0AD2892BDE4001C1847 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
