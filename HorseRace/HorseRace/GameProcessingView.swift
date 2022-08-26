@@ -10,7 +10,7 @@ import SpriteKit
 
 struct GameProcessingView: View {
     @State private var count = 3
-    @State private var horseCount = 6 // SKScene에 Input으로 줄 말 마리 수(이후 Binding 형태로 수정)
+    @State private var horseCount = 6 // 🖐SKScene에 Input으로 줄 말 마리 수(이후 Binding 형태로 수정)
     @State private var animationAmount = -90.0
     
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
@@ -18,6 +18,7 @@ struct GameProcessingView: View {
     var body: some View {
         
         ZStack {
+            // 말 마리수 반영해서 Scene 생성
             SpriteView(scene: HorseRunningScene(size: CGSize(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height), horseCount: horseCount))
                 .ignoresSafeArea()
             
