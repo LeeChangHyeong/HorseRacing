@@ -10,7 +10,7 @@ import SpriteKit
 
 struct GameProcessingView: View {
     @State private var count = 3
-    @State private var horseCount = Int.random(in: 2...6) // SKScene에 Input으로 줄 말 마리 수(이후 Binding 형태로 수정)
+    @State private var horseCount = 6 // SKScene에 Input으로 줄 말 마리 수(이후 Binding 형태로 수정)
     @State private var animationAmount = -90.0
     
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
@@ -33,7 +33,7 @@ struct GameProcessingView: View {
         Text("\(count)")
             .font(.custom("Copperplate", size: 120))
             .foregroundColor(.white)
-            .rotation3DEffect(.degrees(animationAmount), axis: (x: 1.0, y: 0.0, z: 0.0))
+            .rotation3DEffect(.degrees(animationAmount), axis: (x: 1.0, y: 0.0, z: 0.01))
             .onAppear {
                 withAnimation {
                     animationAmount += 90
@@ -76,8 +76,8 @@ class HorseRunningScene: SKScene {
     
     var horseCount: Int = Int.random(in: 2...6)  // 말 마리 수 받아오기
     
-    private var colorArray: [String] = ["red", "green", "blue", "red2", "green2", "yellow"]
-    private var horse: [String: SKSpriteNode] = [:]
+    private var colorArray: [String] = ["red", "green", "blue", "red2", "green2", "blue"]
+    private var horseArray: [SKSpriteNode?] = []
     private var horseRunningFrames: [SKTexture] = []
     
     private var start = false
@@ -113,7 +113,7 @@ class HorseRunningScene: SKScene {
         colorArray.shuffle()
         
         for i in 1...horseCount {
-            buildHorse(color: colorArray[i-1])
+            buildHorse(number: i)
         }
         
         print("\(horseCount) horses")
@@ -134,36 +134,36 @@ class HorseRunningScene: SKScene {
             }
             
             // 말의 움직임 속도 (x축 이동)
-            for horseColor in horse.keys {
-                horse[horseColor]?.position.x += CGFloat.random(in: -3...4)
+            for horse in horseArray {
+                horse?.position.x += CGFloat.random(in: -3...4)
             }
         }
     }
     
     
     // horse Atlas를 생성
-    func buildHorse(color: String) {
+    func buildHorse(number: Int) {
         // 말이 여러 마리일 경우 prameter로 말 색상 주기 (color)
         // position 변경 -> horse.position = CGPoint(x:y:) 임의로 설정해 둔 상태
         
-        let horseAnimatedAtlas = SKTextureAtlas(named: "\(color)HorseImages")
+        let horseAnimatedAtlas = SKTextureAtlas(named: "horse\(number)Images")
         var runFrames: [SKTexture] = []
         
         let horseSpeed: Double = 40
         let numImages = horseAnimatedAtlas.textureNames.count
         
         for i in 1...numImages {
-            let horseTextureName = "\(color)Horse\(i)"
+            let horseTextureName = "horse\(number)-\(i)"
             runFrames.append(horseAnimatedAtlas.textureNamed(horseTextureName))
         }
         horseRunningFrames = runFrames
         
         let firstFrameTexture = horseRunningFrames[Int.random(in: 3...5)]
-        horse[color] = SKSpriteNode(texture: firstFrameTexture)
+        horseArray.append(SKSpriteNode(texture: firstFrameTexture))
         
-        if let horseNode = horse[color] {
-            horseNode.position = CGPoint(x: frame.minX + 150, y: UIScreen.main.bounds.height / CGFloat((horseCount) + 3) * CGFloat((colorArray.firstIndex(of: color)!) + 1))
-            horseNode.zPosition = -CGFloat(colorArray.firstIndex(of: color)!)  // 위에 있는 말이 뒤로 가도록 zPosition 지정 필요
+        if let horseNode = horseArray[number-1] {
+            horseNode.position = CGPoint(x: frame.minX + 150, y: UIScreen.main.bounds.height / CGFloat((horseCount) + 3) * CGFloat(number))
+            horseNode.zPosition = -CGFloat(number)  // 위에 있는 말이 뒤로 가도록 zPosition 지정 필요
             horseNode.size = CGSize(width: 188, height: 106)
             addChild(horseNode)
             
@@ -172,13 +172,13 @@ class HorseRunningScene: SKScene {
                 self.start = true
             }
             
-            animateHorse(color: color, speed: horseSpeed)
+            animateHorse(number: number, speed: horseSpeed)
         }
     }
     
     
     // horse 다리 애니메이션 동작, speed는 말의 다리 움직임 속도(
-    func animateHorse(color: String, speed: Double) {
+    func animateHorse(number: Int, speed: Double) {
         let timePerFrame = 1 / speed
         
         // 3초간 대기하는 Action
@@ -190,9 +190,9 @@ class HorseRunningScene: SKScene {
         )
         
         // 앞의 두 Action을 순서대로 수행
-        if let horseNode = horse[color] {
+        if let horseNode = horseArray[number-1] {
             horseNode.run(SKAction.sequence([waiting, runningAction]),
-                          withKey: "\(color)HorseRunning"
+                          withKey: "horse\(number)Running"
             )
         }
     }
