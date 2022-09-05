@@ -15,9 +15,6 @@
 		3296D0BA2892BDE4001C1847 /* HorseRaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3296D0B92892BDE4001C1847 /* HorseRaceTests.swift */; };
 		3296D0C42892BDE4001C1847 /* HorseRaceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3296D0C32892BDE4001C1847 /* HorseRaceUITests.swift */; };
 		3296D0C62892BDE4001C1847 /* HorseRaceUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3296D0C52892BDE4001C1847 /* HorseRaceUITestsLaunchTests.swift */; };
-		A39FCEA928C5EC290078E19F /* greenHorseImages.atlas in Resources */ = {isa = PBXBuildFile; fileRef = A39FCEA628C5EC290078E19F /* greenHorseImages.atlas */; };
-		A39FCEAA28C5EC290078E19F /* redHorseImages.atlas in Resources */ = {isa = PBXBuildFile; fileRef = A39FCEA728C5EC290078E19F /* redHorseImages.atlas */; };
-		A39FCEAB28C5EC290078E19F /* blueHorseImages.atlas in Resources */ = {isa = PBXBuildFile; fileRef = A39FCEA828C5EC290078E19F /* blueHorseImages.atlas */; };
 		A39FCEAD28C5ECE30078E19F /* GameStartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39FCEAC28C5ECE30078E19F /* GameStartView.swift */; };
 		B984828F28B8434F0087457C /* horse5Images.atlas in Resources */ = {isa = PBXBuildFile; fileRef = B984828928B8434F0087457C /* horse5Images.atlas */; };
 		B984829028B8434F0087457C /* horse6Images.atlas in Resources */ = {isa = PBXBuildFile; fileRef = B984828A28B8434F0087457C /* horse6Images.atlas */; };
@@ -25,8 +22,6 @@
 		B984829228B8434F0087457C /* horse1Images.atlas in Resources */ = {isa = PBXBuildFile; fileRef = B984828C28B8434F0087457C /* horse1Images.atlas */; };
 		B984829328B8434F0087457C /* horse2Images.atlas in Resources */ = {isa = PBXBuildFile; fileRef = B984828D28B8434F0087457C /* horse2Images.atlas */; };
 		B984829428B8434F0087457C /* horse4Images.atlas in Resources */ = {isa = PBXBuildFile; fileRef = B984828E28B8434F0087457C /* horse4Images.atlas */; };
-		B9C64F9228B52A9E0008AF30 /* green2HorseImages.atlas in Resources */ = {isa = PBXBuildFile; fileRef = B9C64F9128B52A9E0008AF30 /* green2HorseImages.atlas */; };
-		B9C64F9428B52AA40008AF30 /* red2HorseImages.atlas in Resources */ = {isa = PBXBuildFile; fileRef = B9C64F9328B52AA40008AF30 /* red2HorseImages.atlas */; };
 		B9E1220328B3C5C400932AAE /* GameProcessingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E1220228B3C5C400932AAE /* GameProcessingView.swift */; };
 /* End PBXBuildFile section */
 
@@ -59,9 +54,6 @@
 		3296D0BF2892BDE4001C1847 /* HorseRaceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HorseRaceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3296D0C32892BDE4001C1847 /* HorseRaceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorseRaceUITests.swift; sourceTree = "<group>"; };
 		3296D0C52892BDE4001C1847 /* HorseRaceUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorseRaceUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		A39FCEA628C5EC290078E19F /* greenHorseImages.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = greenHorseImages.atlas; sourceTree = "<group>"; };
-		A39FCEA728C5EC290078E19F /* redHorseImages.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = redHorseImages.atlas; sourceTree = "<group>"; };
-		A39FCEA828C5EC290078E19F /* blueHorseImages.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = blueHorseImages.atlas; sourceTree = "<group>"; };
 		A39FCEAC28C5ECE30078E19F /* GameStartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStartView.swift; sourceTree = "<group>"; };
 		B984828928B8434F0087457C /* horse5Images.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = horse5Images.atlas; sourceTree = "<group>"; };
 		B984828A28B8434F0087457C /* horse6Images.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = horse6Images.atlas; sourceTree = "<group>"; };
@@ -69,8 +61,6 @@
 		B984828C28B8434F0087457C /* horse1Images.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = horse1Images.atlas; sourceTree = "<group>"; };
 		B984828D28B8434F0087457C /* horse2Images.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = horse2Images.atlas; sourceTree = "<group>"; };
 		B984828E28B8434F0087457C /* horse4Images.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = horse4Images.atlas; sourceTree = "<group>"; };
-		B9C64F9128B52A9E0008AF30 /* green2HorseImages.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = green2HorseImages.atlas; sourceTree = "<group>"; };
-		B9C64F9328B52AA40008AF30 /* red2HorseImages.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = red2HorseImages.atlas; sourceTree = "<group>"; };
 		B9E1220228B3C5C400932AAE /* GameProcessingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameProcessingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -162,17 +152,12 @@
 		B984829528B843610087457C /* Contents */ = {
 			isa = PBXGroup;
 			children = (
-				A39FCEA828C5EC290078E19F /* blueHorseImages.atlas */,
-				A39FCEA628C5EC290078E19F /* greenHorseImages.atlas */,
-				A39FCEA728C5EC290078E19F /* redHorseImages.atlas */,
 				B984828C28B8434F0087457C /* horse1Images.atlas */,
 				B984828D28B8434F0087457C /* horse2Images.atlas */,
 				B984828B28B8434F0087457C /* horse3Images.atlas */,
 				B984828E28B8434F0087457C /* horse4Images.atlas */,
 				B984828928B8434F0087457C /* horse5Images.atlas */,
 				B984828A28B8434F0087457C /* horse6Images.atlas */,
-				B9C64F9328B52AA40008AF30 /* red2HorseImages.atlas */,
-				B9C64F9128B52A9E0008AF30 /* green2HorseImages.atlas */,
 			);
 			path = Contents;
 			sourceTree = "<group>";
@@ -282,15 +267,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B984829328B8434F0087457C /* horse2Images.atlas in Resources */,
-				A39FCEAA28C5EC290078E19F /* redHorseImages.atlas in Resources */,
 				B984829128B8434F0087457C /* horse3Images.atlas in Resources */,
-				B9C64F9228B52A9E0008AF30 /* green2HorseImages.atlas in Resources */,
 				B984829228B8434F0087457C /* horse1Images.atlas in Resources */,
 				B984828F28B8434F0087457C /* horse5Images.atlas in Resources */,
 				B984829428B8434F0087457C /* horse4Images.atlas in Resources */,
-				A39FCEAB28C5EC290078E19F /* blueHorseImages.atlas in Resources */,
-				A39FCEA928C5EC290078E19F /* greenHorseImages.atlas in Resources */,
-				B9C64F9428B52AA40008AF30 /* red2HorseImages.atlas in Resources */,
 				B984829028B8434F0087457C /* horse6Images.atlas in Resources */,
 				3296D0B02892BDE4001C1847 /* Preview Assets.xcassets in Resources */,
 				3296D0AD2892BDE4001C1847 /* Assets.xcassets in Resources */,
