@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2169B88528C5FEA7005BDAC5 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2169B88428C5FEA7005BDAC5 /* ResultView.swift */; };
 		3284738A28B4C15100BF498D /* FinalGameProcessingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3284738928B4C15100BF498D /* FinalGameProcessingView.swift */; };
 		3296D0A92892BDE3001C1847 /* HorseRaceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3296D0A82892BDE3001C1847 /* HorseRaceApp.swift */; };
 		3296D0AB2892BDE3001C1847 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3296D0AA2892BDE3001C1847 /* ContentView.swift */; };
@@ -48,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2169B88428C5FEA7005BDAC5 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		3284738928B4C15100BF498D /* FinalGameProcessingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalGameProcessingView.swift; sourceTree = "<group>"; };
 		3296D0A52892BDE3001C1847 /* HorseRace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HorseRace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3296D0A82892BDE3001C1847 /* HorseRaceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorseRaceApp.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				A39FCEAC28C5ECE30078E19F /* GameStartView.swift */,
 				B9E1220228B3C5C400932AAE /* GameProcessingView.swift */,
 				3284738928B4C15100BF498D /* FinalGameProcessingView.swift */,
+				2169B88428C5FEA7005BDAC5 /* ResultView.swift */,
 				B984829528B843610087457C /* Contents */,
 				3296D0AC2892BDE4001C1847 /* Assets.xcassets */,
 				3296D0AE2892BDE4001C1847 /* Preview Content */,
@@ -323,6 +326,7 @@
 				3296D0AB2892BDE3001C1847 /* ContentView.swift in Sources */,
 				3296D0A92892BDE3001C1847 /* HorseRaceApp.swift in Sources */,
 				B9E1220328B3C5C400932AAE /* GameProcessingView.swift in Sources */,
+				2169B88528C5FEA7005BDAC5 /* ResultView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
