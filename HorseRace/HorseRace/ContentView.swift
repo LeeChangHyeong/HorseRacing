@@ -15,7 +15,6 @@ struct ContentView: View {
         case .Rank:
             GameStartView(mode: $mode, horseCount: $horseCount)
         }
-        
     }
 }
 
