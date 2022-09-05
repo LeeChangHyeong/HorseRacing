@@ -40,7 +40,8 @@ struct GameStartView: View {
                     .padding(.top, 25)
                     
                     Text("\(horseCount)")
-                        .font(.system(size: 20, weight: .semibold))
+                        .font(.system(size: 25, weight: .heavy))
+                        .foregroundColor(Color("startBtnColor"))
                         .padding([.leading, .trailing], 10)
                         .padding(.top, 25)
                     
