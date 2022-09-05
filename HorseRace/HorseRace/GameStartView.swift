@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct GameStartView: View {
-    @State private var numberOfParticipant: Int = 2
+    @Binding var mode: Mode
+    @Binding var horseCount: Int
     var columns = [
             GridItem(.adaptive(minimum: 80))
         ]
@@ -24,19 +25,19 @@ struct GameStartView: View {
                 Spacer()
                 
                 Button {
-                    if numberOfParticipant > 2 {
-                        numberOfParticipant -= 1
+                    if horseCount > 2 {
+                        horseCount -= 1
                     }
                 } label: {
                     Image(systemName: "minus")
                 }
                 
-                Text("\(numberOfParticipant)")
+                Text("\(horseCount)")
                     .font(.system(size: 20, weight: .semibold))
                 
                 Button {
-                    if numberOfParticipant < 6 {
-                        numberOfParticipant += 1
+                    if horseCount < 6 {
+                        horseCount += 1
                     }
                 } label: {
                     Image(systemName: "plus")
@@ -47,7 +48,7 @@ struct GameStartView: View {
             
             // 말 이미지 동적 늘어나기, 줄어들기
             LazyHGrid(rows: columns) {
-                ForEach(0..<numberOfParticipant, id:\.self) { _ in
+                ForEach(0..<horseCount, id:\.self) { _ in
                     // 말 이미지로 수정하기
                     Circle()
                 }
@@ -58,6 +59,7 @@ struct GameStartView: View {
             
             Button {
                 // 뷰 전환
+                mode = .FirstGame
             } label: {
                 RoundedRectangle(cornerRadius: 10)
                     .frame(width: 80, height: 33, alignment: .center)
@@ -72,10 +74,10 @@ struct GameStartView: View {
         }
     }
 }
-
-struct GameStartView_Previews: PreviewProvider {
-    static var previews: some View {
-        GameStartView()
-            .previewInterfaceOrientation(.landscapeLeft)
-    }
-}
+//
+//struct GameStartView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        GameStartView()
+//            .previewInterfaceOrientation(.landscapeLeft)
+//    }
+//}

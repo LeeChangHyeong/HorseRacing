@@ -9,9 +9,13 @@ import SwiftUI
 import SpriteKit
 
 struct FinalGameProcessingView: View {
+    @Binding var mode: Mode
+    @Binding var horseCount: Int
+    
+    
     var body: some View {
         ZStack {
-            SpriteView(scene: FinalHorseRunningScene(size: CGSize(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)))
+            SpriteView(scene: FinalHorseRunningScene(size: CGSize(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height), horseCount: horseCount))
                 .ignoresSafeArea()
         }
     }
@@ -20,52 +24,39 @@ struct FinalGameProcessingView: View {
 class FinalHorseRunningScene: SKScene {
     
     let backgroundFinish = SKSpriteNode(imageNamed: "backgroundFinish")
-    private var horseArr: [SKSpriteNode] = [SKSpriteNode(),SKSpriteNode(),SKSpriteNode(),SKSpriteNode(),SKSpriteNode(),SKSpriteNode()]
+    private var horseArray: [SKSpriteNode?] = []
     private var randomSecond: [Int] = []
-//    private var horse = SKSpriteNode()
-//    private var horse2 = SKSpriteNode()
-//    private var horse3 = SKSpriteNode()
     
     private var horseRunningFrames: [SKTexture] = []
+    var horseCount: Int = Int.random(in: 2...6)  // 말 마리 수 받아오기
+    
+    override init(size: CGSize) {
+        super.init(size: size)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // 말 마리 수를 받아 올 수 있는 initializer
+    convenience init(size: CGSize, horseCount: Int) {
+        self.init(size: size)
+        self.horseCount = horseCount
+    }
     
     override func didMove(to view: SKView) {
         // 배경 크기 조절
         backgroundFinish.anchorPoint = CGPoint.zero
         backgroundFinish.size.width = UIScreen.main.bounds.size.width
         backgroundFinish.size.height = UIScreen.main.bounds.size.height
+        backgroundFinish.zPosition = -10
         addChild(backgroundFinish)
         
-        // 받아온 변수로 바꾸기 ( 0..< 받아온 플레이어 수 )
-        (0..<6).forEach { item in
-            var color: String = ""
-            switch item {
-            case 0:
-                color = "red"
-                randomSecond.append((60...120).randomElement() ?? 60 )
-            case 1:
-                color = "green"
-                randomSecond.append((60...120).randomElement() ?? 60 )
-            case 2:
-                color = "blue"
-                randomSecond.append((60...120).randomElement() ?? 60 )
-            default:
-                // case 3 ~ case 5 색상 지정 해주기
-                color = "blue"
-                randomSecond.append((60...120).randomElement() ?? 60 )
-            }
-            buildHorse(color: color, horse: horseArr[item])
-            animateHorse(color: color, speed: 50, horse: horseArr[item])
-            print(randomSecond)
+
+        for i in 1...horseCount {
+            buildHorse(number: i)
+            randomSecond.append((60...120).randomElement() ?? 60 )
         }
-//        buildHorse(color: "red", horse: horse)
-//        animateHorse(color: "red", speed: 50, horse: horse)
-//
-//        buildHorse(color: "green", horse: horse2)
-//        animateHorse(color: "green", speed: 50, horse: horse2)
-//
-//        buildHorse(color: "blue", horse: horse3)
-//        animateHorse(color: "blue", speed: 50, horse: horse3)
-        
     
     }
     
@@ -73,62 +64,62 @@ class FinalHorseRunningScene: SKScene {
         // 60에서 180사이
         
         // 받아온 변수로 바꾸기
-        (0..<6).forEach { item in
-            horseArr[item].position.x += CGFloat(UIScreen.main.bounds.size.width / CGFloat(randomSecond[item]))
+        // 말의 움직임 속도 (x축 이동)
+        for (i, horse) in horseArray.enumerated() {
+            horse?.position.x += CGFloat(UIScreen.main.bounds.size.width / CGFloat(randomSecond[i]))
         }
-//        horse.position.x += CGFloat(UIScreen.main.bounds.size.width / 180)
-//        horse2.position.x += CGFloat(UIScreen.main.bounds.size.width / 130)
-//        horse3.position.x += CGFloat(UIScreen.main.bounds.size.width / 120)
     }
     
     
-    func buildHorse(color: String, horse: SKSpriteNode) {
-        // horse Atlas를 생성, 여기서는 sample Red 이미지로 구성
-        // 말이 여러 마리일 경우 prameter로 말 색상 줄 수 있음 -> let horseColor: String
-        // position 변경 -> horse.position = CGPoint(x:y:) 임의로 설정해 둔 상태
-        
-        let horseAnimatedAtlas = SKTextureAtlas(named: "\(color)HorseImages")
-        var runFrames: [SKTexture] = []
-        
-        // 받아온 변수로 대체, ( 현재 임시 변수 )
-        let num = 6
-        
-        let numImages = horseAnimatedAtlas.textureNames.count
-        for i in 1...numImages {
-            let horseTextureName = "\(color)Horse\(i)"
-            runFrames.append(horseAnimatedAtlas.textureNamed(horseTextureName))
-        }
-        horseRunningFrames = runFrames
-        
-//        (0..<3).forEach { item in
-//            horseArr[item].position = CGPoint(x: frame.minX - 10, y: (UIScreen.main.bounds.height / (num + 1)) * (item + 1) - 100)
-//        }
-        
-        for i in 0..<num {
-            horseArr[i].position = CGPoint(x: frame.minX - 10, y: UIScreen.main.bounds.height / CGFloat((num + 1)) * CGFloat((i + 1)) - CGFloat(40))
-        }
-        
-                                            //(UIScreen.main.bounds.height / (num + 1)) * (i + 1) - 100))
-//        if horse === self.horseArr[0] {
-//            horse.position = CGPoint(x: frame.minX - 10, y: frame.midY + 20)
-//        } else if horse === self.horseArr[1]{
-//            horse.position = CGPoint(x: frame.minX - 10, y: frame.midY)
-//        }
-        horse.size = CGSize(width: 188, height: 106)
-        addChild(horse)
-        
+
+
+// horse Atlas를 생성
+func buildHorse(number: Int) {
+    // 말이 여러 마리일 경우 prameter로 말 색상 주기 (color)
+    // position 변경 -> horse.position = CGPoint(x:y:) 임의로 설정해 둔 상태
+    
+    let horseAnimatedAtlas = SKTextureAtlas(named: "horse\(number)Images")
+    var runFrames: [SKTexture] = []
+    
+    let horseSpeed: Double = 40
+    let numImages = horseAnimatedAtlas.textureNames.count
+    
+    for i in 1...numImages {
+        let horseTextureName = "horse\(number)-\(i)"
+        runFrames.append(horseAnimatedAtlas.textureNamed(horseTextureName))
     }
+    horseRunningFrames = runFrames
+    
+    let firstFrameTexture = horseRunningFrames[Int.random(in: 3...5)]
+    horseArray.append(SKSpriteNode(texture: firstFrameTexture))
+    
+    if let horseNode = horseArray[number-1] {
+        horseNode.position = CGPoint(x: frame.minX - 10, y: UIScreen.main.bounds.height / CGFloat((horseCount) + 3) * CGFloat(number))
+        
+        horseNode.zPosition = -CGFloat(number)  // 위에 있는 말이 뒤로 가도록 zPosition 지정 필요
+        horseNode.size = CGSize(width: 188, height: 106)
+        addChild(horseNode)
+        
+        animateHorse(number: number, speed: horseSpeed)
+    }
+}
+
+
+// horse 다리 애니메이션 동작, speed는 말의 다리 움직임 속도(
+func animateHorse(number: Int, speed: Double) {
+    let timePerFrame = 1 / speed
     
     
-    func animateHorse(color: String, speed: Double, horse: SKSpriteNode) {
-        // horse 애니메이션 동작, speed는 말의 다리 움직임 속도(필요한 부분인지는 잘 모르겠음)
-        let timePerFrame = 1 / speed
-        
-        horse.run(SKAction.repeatForever(
-            SKAction.animate(with: horseRunningFrames,
-                             timePerFrame: timePerFrame,
-                             resize: false,
-                             restore: true)),
-        withKey: "\(color)HorseRunning")
+    // 달리는 Action
+    let runningAction = SKAction.repeatForever(SKAction.animate(with: horseRunningFrames,timePerFrame: timePerFrame)
+    )
+    
+    // 앞의 두 Action을 순서대로 수행
+    if let horseNode = horseArray[number-1] {
+        horseNode.run(SKAction.sequence([runningAction]),
+                      withKey: "horse\(number)Running"
+        )
     }
+}
+
 }

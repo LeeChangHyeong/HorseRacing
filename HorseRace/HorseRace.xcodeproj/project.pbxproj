@@ -18,6 +18,7 @@
 		A39FCEA928C5EC290078E19F /* greenHorseImages.atlas in Resources */ = {isa = PBXBuildFile; fileRef = A39FCEA628C5EC290078E19F /* greenHorseImages.atlas */; };
 		A39FCEAA28C5EC290078E19F /* redHorseImages.atlas in Resources */ = {isa = PBXBuildFile; fileRef = A39FCEA728C5EC290078E19F /* redHorseImages.atlas */; };
 		A39FCEAB28C5EC290078E19F /* blueHorseImages.atlas in Resources */ = {isa = PBXBuildFile; fileRef = A39FCEA828C5EC290078E19F /* blueHorseImages.atlas */; };
+		A39FCEAD28C5ECE30078E19F /* GameStartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39FCEAC28C5ECE30078E19F /* GameStartView.swift */; };
 		B984828F28B8434F0087457C /* horse5Images.atlas in Resources */ = {isa = PBXBuildFile; fileRef = B984828928B8434F0087457C /* horse5Images.atlas */; };
 		B984829028B8434F0087457C /* horse6Images.atlas in Resources */ = {isa = PBXBuildFile; fileRef = B984828A28B8434F0087457C /* horse6Images.atlas */; };
 		B984829128B8434F0087457C /* horse3Images.atlas in Resources */ = {isa = PBXBuildFile; fileRef = B984828B28B8434F0087457C /* horse3Images.atlas */; };
@@ -61,6 +62,7 @@
 		A39FCEA628C5EC290078E19F /* greenHorseImages.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = greenHorseImages.atlas; sourceTree = "<group>"; };
 		A39FCEA728C5EC290078E19F /* redHorseImages.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = redHorseImages.atlas; sourceTree = "<group>"; };
 		A39FCEA828C5EC290078E19F /* blueHorseImages.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = blueHorseImages.atlas; sourceTree = "<group>"; };
+		A39FCEAC28C5ECE30078E19F /* GameStartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStartView.swift; sourceTree = "<group>"; };
 		B984828928B8434F0087457C /* horse5Images.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = horse5Images.atlas; sourceTree = "<group>"; };
 		B984828A28B8434F0087457C /* horse6Images.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = horse6Images.atlas; sourceTree = "<group>"; };
 		B984828B28B8434F0087457C /* horse3Images.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = horse3Images.atlas; sourceTree = "<group>"; };
@@ -122,12 +124,12 @@
 			children = (
 				3296D0A82892BDE3001C1847 /* HorseRaceApp.swift */,
 				3296D0AA2892BDE3001C1847 /* ContentView.swift */,
+				A39FCEAC28C5ECE30078E19F /* GameStartView.swift */,
 				B9E1220228B3C5C400932AAE /* GameProcessingView.swift */,
 				3284738928B4C15100BF498D /* FinalGameProcessingView.swift */,
 				B984829528B843610087457C /* Contents */,
 				3296D0AC2892BDE4001C1847 /* Assets.xcassets */,
 				3296D0AE2892BDE4001C1847 /* Preview Content */,
-				A396942F28C5E7F000FA2C6B /* GameStartView.swift */,
 			);
 			path = HorseRace;
 			sourceTree = "<group>";
@@ -317,7 +319,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3284738A28B4C15100BF498D /* FinalGameProcessingView.swift in Sources */,
-				A396943028C5E7F000FA2C6B /* GameStartView.swift in Sources */,
+				A39FCEAD28C5ECE30078E19F /* GameStartView.swift in Sources */,
 				3296D0AB2892BDE3001C1847 /* ContentView.swift in Sources */,
 				3296D0A92892BDE3001C1847 /* HorseRaceApp.swift in Sources */,
 				B9E1220328B3C5C400932AAE /* GameProcessingView.swift in Sources */,
