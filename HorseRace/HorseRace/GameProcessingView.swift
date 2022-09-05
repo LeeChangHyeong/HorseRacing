@@ -9,8 +9,9 @@ import SwiftUI
 import SpriteKit
 
 struct GameProcessingView: View {
+    @Binding var mode: Mode
     @State private var count = 3
-    @State private var horseCount = 6 // 🖐SKScene에 Input으로 줄 말 마리 수(이후 Binding 형태로 수정)
+    @Binding var horseCount: Int
     @State private var animationAmount = -90.0
     
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
@@ -26,6 +27,12 @@ struct GameProcessingView: View {
                 numView
             } else if count == 0{
                 startMessage
+            }
+        }
+        .onAppear() {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 11) {
+                mode = .LastGame
+                
             }
         }
     }
@@ -136,7 +143,7 @@ class HorseRunningScene: SKScene {
             
             // 말의 움직임 속도 (x축 이동)
             for horse in horseArray {
-                horse?.position.x += CGFloat.random(in: -3...4)
+                horse?.position.x += CGFloat.random(in: -3...6)
             }
         }
     }
@@ -172,6 +179,7 @@ class HorseRunningScene: SKScene {
             DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
                 self.start = true
             }
+            
             
             animateHorse(number: number, speed: horseSpeed)
         }
