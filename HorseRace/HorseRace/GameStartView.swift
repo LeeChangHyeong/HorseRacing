@@ -13,10 +13,11 @@ struct GameStartView: View {
     
     var body: some View {
         ZStack {
-            Image("startBgImg").resizable()
-                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height, alignment: .center)
-                .scaledToFill()
+            Image("startBgImg")
+                .resizable()
                 .ignoresSafeArea()
+                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height + 20)
+                .scaledToFill().clipped()
             
             VStack {
                 HStack {
@@ -63,7 +64,7 @@ struct GameStartView: View {
                 
                 Spacer()
                 
-                HStack {
+                HStack(spacing: 0) {
                     ForEach(1...horseCount, id:\.self) { num in
                         // 말 이미지로 수정하기
                         Image("horse\(num)").resizable()
@@ -71,6 +72,7 @@ struct GameStartView: View {
                             .scaledToFit()
                     }
                 }
+                .padding(.horizontal)
                 .padding(.bottom, 40)
                 
                 Text("자신의 말을 기억해 주세요!")
