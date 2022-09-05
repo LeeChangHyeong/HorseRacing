@@ -121,11 +121,7 @@ class HorseRunningScene: SKScene {
         
         for i in 1...horseCount {
             buildHorse(number: i)
-        }
-        
-        print("\(horseCount) horses")
-        
-    }
+        }    }
     
     override func update(_ currentTime: TimeInterval) {
         let backgroundSpeed: CGFloat = 10
@@ -174,7 +170,6 @@ class HorseRunningScene: SKScene {
             DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
                 self.start = true
             }
-            
             animateHorse(number: number, speed: horseSpeed)
         }
     }
