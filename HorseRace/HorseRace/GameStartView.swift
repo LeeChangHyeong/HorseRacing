@@ -66,7 +66,6 @@ struct GameStartView: View {
                 
                 HStack(spacing: 0) {
                     ForEach(1...horseCount, id:\.self) { num in
-                        // 말 이미지로 수정하기
                         Image("horse\(num)").resizable()
                             .frame(maxHeight: 200, alignment: .center)
                             .scaledToFit()
