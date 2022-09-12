@@ -7,12 +7,15 @@
 
 import SwiftUI
 import SpriteKit
+import AVKit
 
 struct GameProcessingView: View {
     @Binding var mode: Mode
     @State private var count = 3
     @Binding var horseCount: Int
     @State private var animationAmount = -90.0
+    
+    var soundSetting = SoundSetting()
     
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
@@ -30,9 +33,12 @@ struct GameProcessingView: View {
             }
         }
         .onAppear() {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3.3) {
+                SoundSetting.sound.playSound()
+            }
+            
             DispatchQueue.main.asyncAfter(deadline: .now() + 11) {
                 mode = .LastGame
-                
             }
         }
     }
@@ -83,11 +89,12 @@ class HorseRunningScene: SKScene {
     
     var horseCount: Int = Int.random(in: 2...6)  // 말 마리 수 받아오기
     
-    private var colorArray: [String] = ["red", "green", "blue", "red2", "green2", "blue"]
     private var horseArray: [SKSpriteNode?] = []
     private var horseRunningFrames: [SKTexture] = []
     
     private var start = false
+    
+    let gameCountdownSound = SKAction.playSoundFileNamed("gameCountdownSound", waitForCompletion: false)
     
     override init(size: CGSize) {
         super.init(size: size)
@@ -117,14 +124,16 @@ class HorseRunningScene: SKScene {
         backgroundMiddle.size.height = frame.height
         addChild(backgroundMiddle)
         
-        colorArray.shuffle()
-        
         for i in 1...horseCount {
             buildHorse(number: i)
-        }    }
+        }
+        
+        // 처음 시작 카운트다운 사운드 재생
+        run(gameCountdownSound)
+    }
     
     override func update(_ currentTime: TimeInterval) {
-        let backgroundSpeed: CGFloat = 10
+        let backgroundSpeed: CGFloat = 20
         
         if start {
             backgroundStart.position.x -= backgroundSpeed
@@ -179,7 +188,7 @@ class HorseRunningScene: SKScene {
         let timePerFrame = 1 / speed
         
         // 3초간 대기하는 Action
-        let waiting = SKAction.wait(forDuration: 3)
+        let waiting = SKAction.wait(forDuration: 3.3)
         
         // 달리는 Action
         let runningAction = SKAction.repeatForever(SKAction.animate(with: horseRunningFrames,timePerFrame: timePerFrame)
@@ -191,5 +200,23 @@ class HorseRunningScene: SKScene {
                           withKey: "horse\(number)Running"
             )
         }
+    }
+}
+
+class SoundSetting: ObservableObject {
+    static let sound = SoundSetting()
+    
+    var player: AVAudioPlayer?
+    
+    func playSound() {
+        guard let url = Bundle.main.url(forResource: "HorseGallop", withExtension: "m4a") else { return }
+        
+        do {
+            player = try AVAudioPlayer(contentsOf: url)
+            player?.play()
+        } catch let error {
+            print("\(error.localizedDescription)")
+        }
+        
     }
 }

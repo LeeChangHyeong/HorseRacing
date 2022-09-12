@@ -22,6 +22,8 @@
 		B984829228B8434F0087457C /* horse1Images.atlas in Resources */ = {isa = PBXBuildFile; fileRef = B984828C28B8434F0087457C /* horse1Images.atlas */; };
 		B984829328B8434F0087457C /* horse2Images.atlas in Resources */ = {isa = PBXBuildFile; fileRef = B984828D28B8434F0087457C /* horse2Images.atlas */; };
 		B984829428B8434F0087457C /* horse4Images.atlas in Resources */ = {isa = PBXBuildFile; fileRef = B984828E28B8434F0087457C /* horse4Images.atlas */; };
+		B98482F828CF6AD80087457C /* gameCountdownSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = B98482F728CF6AD80087457C /* gameCountdownSound.wav */; };
+		B98482FC28CF7E160087457C /* HorseGallop.m4a in Resources */ = {isa = PBXBuildFile; fileRef = B98482FB28CF7E160087457C /* HorseGallop.m4a */; };
 		B9E1220328B3C5C400932AAE /* GameProcessingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E1220228B3C5C400932AAE /* GameProcessingView.swift */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +63,8 @@
 		B984828C28B8434F0087457C /* horse1Images.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = horse1Images.atlas; sourceTree = "<group>"; };
 		B984828D28B8434F0087457C /* horse2Images.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = horse2Images.atlas; sourceTree = "<group>"; };
 		B984828E28B8434F0087457C /* horse4Images.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = horse4Images.atlas; sourceTree = "<group>"; };
+		B98482F728CF6AD80087457C /* gameCountdownSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = gameCountdownSound.wav; sourceTree = "<group>"; };
+		B98482FB28CF7E160087457C /* HorseGallop.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = HorseGallop.m4a; sourceTree = "<group>"; };
 		B9E1220228B3C5C400932AAE /* GameProcessingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameProcessingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -152,6 +156,8 @@
 		B984829528B843610087457C /* Contents */ = {
 			isa = PBXGroup;
 			children = (
+				B98482F728CF6AD80087457C /* gameCountdownSound.wav */,
+				B98482FB28CF7E160087457C /* HorseGallop.m4a */,
 				B984828C28B8434F0087457C /* horse1Images.atlas */,
 				B984828D28B8434F0087457C /* horse2Images.atlas */,
 				B984828B28B8434F0087457C /* horse3Images.atlas */,
@@ -266,6 +272,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B98482FC28CF7E160087457C /* HorseGallop.m4a in Resources */,
+				B98482F828CF6AD80087457C /* gameCountdownSound.wav in Resources */,
 				B984829328B8434F0087457C /* horse2Images.atlas in Resources */,
 				B984829128B8434F0087457C /* horse3Images.atlas in Resources */,
 				B984829228B8434F0087457C /* horse1Images.atlas in Resources */,
