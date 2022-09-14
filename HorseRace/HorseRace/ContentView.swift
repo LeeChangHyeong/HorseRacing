@@ -23,6 +23,7 @@ struct ContentView: View {
                 setNewSpeed()
             }
         }
+
     }
     
     private func setNewSpeed() {

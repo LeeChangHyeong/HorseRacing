@@ -126,9 +126,9 @@
 			children = (
 				3296D0A82892BDE3001C1847 /* HorseRaceApp.swift */,
 				3296D0AA2892BDE3001C1847 /* ContentView.swift */,
-				A39FCEAC28C5ECE30078E19F /* GameStartView.swift */,
 				B9E1220228B3C5C400932AAE /* GameProcessingView.swift */,
 				3284738928B4C15100BF498D /* FinalGameProcessingView.swift */,
+				A39FCEAC28C5ECE30078E19F /* GameStartView.swift */,
 				2169B88428C5FEA7005BDAC5 /* ResultView.swift */,
 				B984829528B843610087457C /* Contents */,
 				3296D0AC2892BDE4001C1847 /* Assets.xcassets */,

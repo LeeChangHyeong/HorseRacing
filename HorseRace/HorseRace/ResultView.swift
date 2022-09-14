@@ -34,8 +34,8 @@ struct ResultView: View {
     private let rankingInfo: [RankingInfo]
     private var rows: [GridItem]
     
-    private var isTwoColumns: Bool {
-        !(rankingInfo.count == 2 || rankingInfo.count == 3)
+    private var columnCount: Int {
+        (rankingInfo.count == 2 || rankingInfo.count == 3) ? 1 : 2
     }
     
     private func isUnderLineDisabled(_ num: Int) -> Bool {
@@ -87,74 +87,75 @@ struct ResultView: View {
             Color(hex: "EBDCCC")
             
             VStack(spacing: 12) {
-                Text("RANKING")
-                    .font(.title2.bold())
+                Image("Ranking")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 148)
                 VStack(spacing: 15) {
-                    HStack(spacing: 10) {
-                        ForEach(isTwoColumns ? 0..<2 : 0..<1, id: \.self) { _ in
+                    HStack(spacing: 20) {
+                        ForEach(0..<columnCount, id: \.self) { _ in
                             HStack(spacing: 0) {
                                 Text("등수")
                                     .font(.footnote.bold())
                                     .frame(maxWidth: 50)
-                                
+
                                 Text("경주마")
                                     .font(.footnote.bold())
                                     .frame(maxWidth: .infinity)
-                                
+
                                 Text("걸린시간")
                                     .font(.footnote.bold())
                                     .frame(maxWidth: .infinity)
                             }
-                            .frame(maxWidth: gridWidth)
-                            
                         }
                     }
                     
-                    LazyHGrid(rows: rows, spacing: 20) {
-                        ForEach(rankingInfo.indices, id: \.self) { i in
-                            HStack(spacing: 20) {
-                                Circle()
-                                    .fill(Color.white)
-                                    .aspectRatio(1, contentMode: .fit)
-                                    .overlay(
-                                        Text("\(i+1)")
-                                            .font(.footnote.bold())
-                                    )
-                                
-                                HStack {
-                                    Image("horseRed1")
-                                        .resizable()
-                                        .scaledToFit()
-                                        .frame(width: 100)
+                    RankingGridView(num: rankingInfo.count, rankingInfo: rankingInfo) { (ranking, num, second) in
+                        HStack(spacing: 15) {
+                            Circle()
+                                .fill(Color.white)
+                                .frame(maxHeight: 65)
+                                .aspectRatio(1, contentMode: .fit)
+                                .overlay(
+                                    Text("\(ranking+1)")
+                                        .font(.title2.bold())
+                                )
 
+                            HStack(spacing: 0) {
+                                Image("horse\(num+1)\(rankingInfo.count < 4 ? "byOne" : "byTwo")")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .clipShape(Capsule())
+
+                                HStack(spacing: 12) {
                                     VStack(alignment: .leading, spacing: 0) {
-                                        Text("\(rankingInfo[i].horseNum+1)번마")
+                                        Text("\(num+1)번마")
+                                            .bold()
                                             .foregroundColor(Color(hex: "481B15"))
-                                        
-                                        Text("Number \(numString(rankingInfo[i].horseNum+1))")
+
+                                        Text("Number \(numString(num+1))")
                                             .font(.caption)
                                             .foregroundColor(Color(hex: "9E7B76"))
+                                            .frame(maxWidth: 80)
+                                            .lineLimit(1)
+                                            .minimumScaleFactor(0.8)
                                     }
                                     
-                                    Spacer()
-                                    
-                                    Text(getTimeLiteral(rankingInfo[i].second))
+    //
+                                    Text(getTimeLiteral(second))
                                         .font(.subheadline)
+                                        .bold()
+                                        .lineLimit(1)
+                                        .minimumScaleFactor(0.6)
                                         .foregroundColor(Color(hex: "481B15"))
+
                                 }
-                                .frame(width: 300)
-                                .padding(.horizontal, 30)
-                                .padding(.vertical, 10)
-                                .background(
-                                    Capsule()
-                                        .fill(Color.white)
-                                )
                             }
-                            .frame(maxWidth: gridWidth)
+                            .padding(.trailing, 30)
+                            .frame(maxHeight: 65)
+                            .background(Capsule().fill(Color.white))
                         }
                     }
-                    .frame(maxWidth: gridWidth)
-                    .frame(maxHeight: .infinity)
                 }
                 
                 Button {
@@ -175,16 +176,7 @@ struct ResultView: View {
                 .buttonStyle(.plain)
                 
             }
-            .frame(maxWidth: 580)
-            .background(
-                RoundedRectangle(cornerRadius: 36, style: .continuous)
-                    .fill(Color(hex: "EBDCCC"))
-                    .modifier(SizeModifier())
-                    .onPreferenceChange(SizePreferenceKey.self){ size in
-                        gridWidth = size.width
-                    }
-                
-            )
+            .padding(.horizontal, 60)
             .padding(.vertical, 38)
         }
         .ignoresSafeArea()
@@ -196,28 +188,89 @@ struct ResultView: View {
         let millisecond = value - Float(second)
         return String(second) + "s " + String(format: "%.2f", millisecond).dropFirst(2) + "ms"
     }
-    
-    private func cell(ranking: Int, num: Int, second: Int) -> some View {
-        HStack {
-            
+
+    struct RankingGridView<ItemView: View>: View {
+        
+        var num: Int
+        var rankingInfo: [RankingInfo]
+        let content: (Int, Int, Float) -> ItemView
+        
+        init(num: Int, rankingInfo: [RankingInfo], @ViewBuilder content: @escaping (Int, Int, Float) -> ItemView) {
+            self.num = num
+            self.content = content
+            self.rankingInfo = rankingInfo
+        }
+        
+        var body: some View {
+            if num == 2 {
+                VStack(spacing: 15) {
+                    ForEach(0..<num, id: \.self) { i in
+                        content(i, rankingInfo[i].horseNum, rankingInfo[i].second)
+                    }
+                }
+            } else if num == 3 {
+                VStack(spacing: 15) {
+                    ForEach(0..<3, id: \.self) { i in
+                        content(i, rankingInfo[i].horseNum, rankingInfo[i].second)
+                    }
+                }
+            } else if num == 4 {
+                HStack(alignment: .top, spacing: 20) {
+                    VStack(spacing: 15) {
+                        ForEach(0..<2, id: \.self) { i in
+                            content(i, rankingInfo[i].horseNum, rankingInfo[i].second)
+                        }
+                    }
+                    VStack(spacing: 15) {
+                        ForEach(2..<4, id: \.self) { i in
+                            content(i, rankingInfo[i].horseNum, rankingInfo[i].second)
+                        }
+                    }
+                }
+                .padding([.bottom, .vertical], 16)
+            } else if num == 5 {
+                HStack(alignment: .top, spacing: 20) {
+                    VStack(spacing: 8) {
+                        ForEach(0..<3, id: \.self) { i in
+                            content(i, rankingInfo[i].horseNum, rankingInfo[i].second)
+                        }
+                    }
+                    VStack(spacing: 8) {
+                        ForEach(3..<5, id: \.self) { i in
+                            content(i, rankingInfo[i].horseNum, rankingInfo[i].second)
+                        }
+                        content(0, rankingInfo[0].horseNum, rankingInfo[0].second)
+                            .opacity(0)
+                    }
+                }
+            } else if num == 6 {
+                HStack(alignment: .top, spacing: 20) {
+                    VStack(spacing: 8) {
+                        ForEach(0..<3, id: \.self) { i in
+                            content(i, rankingInfo[i].horseNum, rankingInfo[i].second)
+                        }
+                    }
+                    VStack(spacing: 8) {
+                        ForEach(3..<6, id: \.self) { i in
+                            content(i, rankingInfo[i].horseNum, rankingInfo[i].second)
+                        }
+                    }
+                }
+            }
         }
     }
 }
 
-//struct ResultView_Previews: PreviewProvider {
-//
-//    private static var info = [108, 120, 50]
-//
-//    static var previews: some View {
-//        ResultView(resultInfo: info)
-//            .previewDevice(PreviewDevice(rawValue: "iPhone SE (3rd generation)"))
-//            .previewInterfaceOrientation(.landscapeLeft)
-//
-//        ResultView(resultInfo: info)
-//            .previewDevice(PreviewDevice(rawValue: "iPhone 13"))
-//            .previewInterfaceOrientation(.landscapeLeft)
-//    }
-//}
+struct ResultView_Previews: PreviewProvider {
+
+    private static var info = [108, 42, 50, 20, 50]
+
+    static var previews: some View {
+        ResultView(mode: .constant(.Rank), resultInfo: .constant(info))
+            .previewDevice(PreviewDevice(rawValue: "iPhone 13"))
+            .previewInterfaceOrientation(.landscapeLeft)
+    }
+}
 
 struct SizePreferenceKey: PreferenceKey {
     static var defaultValue: CGSize = .zero
