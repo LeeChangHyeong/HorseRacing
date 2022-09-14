@@ -28,6 +28,7 @@ struct CreditView: View {
                             .scaledToFit()
                             .frame(width: 300)
                         Text("내가사마를 만든 팀원들을 소개합니다!")
+                            .foregroundColor(Color("startBtnColor"))
                     }
                     Spacer()
                     
