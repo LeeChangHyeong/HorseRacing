@@ -71,7 +71,6 @@ struct GameProcessingView: View {
                 animationAmount += 90
             }
         }
-        
     }
 }
 
@@ -122,11 +121,7 @@ class HorseRunningScene: SKScene {
         
         for i in 1...horseCount {
             buildHorse(number: i)
-        }
-        
-        print("\(horseCount) horses")
-        
-    }
+        }    }
     
     override func update(_ currentTime: TimeInterval) {
         let backgroundSpeed: CGFloat = 10
@@ -140,7 +135,6 @@ class HorseRunningScene: SKScene {
                 backgroundStart.position.x = backgroundMiddle.position.x
                 backgroundMiddle.position.x += backgroundMiddle.size.width
             }
-            
             // 말의 움직임 속도 (x축 이동)
             for horse in horseArray {
                 horse?.position.x += CGFloat.random(in: -3...6)
@@ -151,9 +145,6 @@ class HorseRunningScene: SKScene {
     
     // horse Atlas를 생성
     func buildHorse(number: Int) {
-        // 말이 여러 마리일 경우 prameter로 말 색상 주기 (color)
-        // position 변경 -> horse.position = CGPoint(x:y:) 임의로 설정해 둔 상태
-        
         let horseAnimatedAtlas = SKTextureAtlas(named: "horse\(number)Images")
         var runFrames: [SKTexture] = []
         
@@ -179,12 +170,9 @@ class HorseRunningScene: SKScene {
             DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
                 self.start = true
             }
-            
-            
             animateHorse(number: number, speed: horseSpeed)
         }
     }
-    
     
     // horse 다리 애니메이션 동작, speed는 말의 다리 움직임 속도(
     func animateHorse(number: Int, speed: Double) {
@@ -192,7 +180,6 @@ class HorseRunningScene: SKScene {
         
         // 3초간 대기하는 Action
         let waiting = SKAction.wait(forDuration: 3)
-        
         
         // 달리는 Action
         let runningAction = SKAction.repeatForever(SKAction.animate(with: horseRunningFrames,timePerFrame: timePerFrame)
@@ -205,5 +192,4 @@ class HorseRunningScene: SKScene {
             )
         }
     }
-    
 }

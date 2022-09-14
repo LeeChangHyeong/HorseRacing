@@ -10,74 +10,89 @@ import SwiftUI
 struct GameStartView: View {
     @Binding var mode: Mode
     @Binding var horseCount: Int
-    var columns = [
-            GridItem(.adaptive(minimum: 80))
-        ]
-
     
     var body: some View {
-        VStack {
-            HStack {
+        ZStack {
+            Image("startBgImg")
+                .resizable()
+                .ignoresSafeArea()
+                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height + 20)
+                .scaledToFill().clipped()
+            
+            VStack {
+                HStack {
+                    Spacer()
+                    
+                    Button {
+                        if horseCount > 2 {
+                            horseCount -= 1
+                        }
+                    } label: {
+                        Circle()
+                            .foregroundColor(Color("startBtnColor"))
+                            .frame(width: 30, height: 30)
+                            .overlay(
+                                Image(systemName: "minus")
+                                    .font(.system(size: 20))
+                                    .foregroundColor(.white)
+                            )
+                    }
+                    .padding(.top, 25)
+                    
+                    Text("\(horseCount)")
+                        .font(.system(size: 25, weight: .heavy))
+                        .foregroundColor(Color("startBtnColor"))
+                        .padding([.leading, .trailing], 10)
+                        .padding(.top, 25)
+                    
+                    Button {
+                        if horseCount < 6 {
+                            horseCount += 1
+                        }
+                    } label: {
+                        Circle()
+                            .foregroundColor(Color("startBtnColor"))
+                            .frame(width: 30, height: 30)
+                            .overlay(
+                                Image(systemName: "plus")
+                                    .font(.system(size: 20))
+                                    .foregroundColor(.white)
+                            )
+                    }
+                    .padding(.top, 25)
+                }
+                .padding()
+                
                 Spacer()
                 
-                Text("Logo")
+                HStack(spacing: 0) {
+                    ForEach(1...horseCount, id:\.self) { num in
+                        Image("horse\(num)").resizable()
+                            .frame(maxHeight: 200, alignment: .center)
+                            .scaledToFit()
+                    }
+                }
+                .padding(.horizontal)
+                .padding(.bottom, 40)
                 
-                Spacer()
+                Text("자신의 말을 기억해 주세요!")
+                    .font(.system(size: 20, weight: .heavy))
+                    .foregroundColor(Color("startBtnColor"))
                 
                 Button {
-                    if horseCount > 2 {
-                        horseCount -= 1
-                    }
+                    mode = .FirstGame
                 } label: {
-                    Image(systemName: "minus")
+                    RoundedRectangle(cornerRadius: 10)
+                        .frame(width: 92, height: 37, alignment: .center)
+                        .foregroundColor(Color("startBtnColor"))
+                        .overlay(
+                            Text("시작하기")
+                                .foregroundColor(.white)
+                                .font(.system(size: 16, weight: .heavy))
+                        )
+                        .padding()
                 }
-                
-                Text("\(horseCount)")
-                    .font(.system(size: 20, weight: .semibold))
-                
-                Button {
-                    if horseCount < 6 {
-                        horseCount += 1
-                    }
-                } label: {
-                    Image(systemName: "plus")
-                }
-            }
-            .padding()
-            Spacer()
-            
-            // 말 이미지 동적 늘어나기, 줄어들기
-            LazyHGrid(rows: columns) {
-                ForEach(0..<horseCount, id:\.self) { _ in
-                    // 말 이미지로 수정하기
-                    Circle()
-                }
-            }
-            
-            Text("자신의 말을 기억해 주세요!")
-                .font(.system(size: 20, weight: .semibold))
-            
-            Button {
-                // 뷰 전환
-                mode = .FirstGame
-            } label: {
-                RoundedRectangle(cornerRadius: 10)
-                    .frame(width: 80, height: 33, alignment: .center)
-                    .foregroundColor(Color(.systemGray6))
-                    .overlay(
-                        Text("시작하기")
-                            .foregroundColor(.black)
-                            .font(.system(size: 13, weight: .bold))
-                    )
-                    .padding()
             }
         }
     }
 }
-//
-//struct GameStartView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        GameStartView()
-//            .previewInterfaceOrientation(.landscapeLeft)
-//    }
-//}
