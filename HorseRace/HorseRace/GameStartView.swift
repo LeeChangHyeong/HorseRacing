@@ -11,6 +11,8 @@ struct GameStartView: View {
     @Binding var mode: Mode
     @Binding var horseCount: Int
     
+    @State private var showCreditView = false
+    
     var body: some View {
         ZStack {
             Image("startBgImg")
@@ -21,6 +23,20 @@ struct GameStartView: View {
             
             VStack {
                 HStack {
+                    
+                    Button {
+                        showCreditView = true
+                    } label: {
+                        Image("InformationMark")
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                    }
+                    .fullScreenCover(isPresented: $showCreditView) {
+                        CreditView()
+                    }
+                    .padding()
+
+                    
                     Spacer()
                     
                     Button {
