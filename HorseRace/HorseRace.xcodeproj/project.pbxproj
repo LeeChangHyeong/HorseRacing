@@ -17,6 +17,9 @@
 		3296D0BA2892BDE4001C1847 /* HorseRaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3296D0B92892BDE4001C1847 /* HorseRaceTests.swift */; };
 		3296D0C42892BDE4001C1847 /* HorseRaceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3296D0C32892BDE4001C1847 /* HorseRaceUITests.swift */; };
 		3296D0C62892BDE4001C1847 /* HorseRaceUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3296D0C52892BDE4001C1847 /* HorseRaceUITestsLaunchTests.swift */; };
+		32E19A3828D31E70007EF964 /* startButtonSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32E19A3528D31E70007EF964 /* startButtonSound.wav */; };
+		32E19A3928D31E70007EF964 /* negativeSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32E19A3628D31E70007EF964 /* negativeSound.wav */; };
+		32E19A3A28D31E70007EF964 /* changeSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32E19A3728D31E70007EF964 /* changeSound.wav */; };
 		A39FCEAD28C5ECE30078E19F /* GameStartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39FCEAC28C5ECE30078E19F /* GameStartView.swift */; };
 		B984828F28B8434F0087457C /* horse5Images.atlas in Resources */ = {isa = PBXBuildFile; fileRef = B984828928B8434F0087457C /* horse5Images.atlas */; };
 		B984829028B8434F0087457C /* horse6Images.atlas in Resources */ = {isa = PBXBuildFile; fileRef = B984828A28B8434F0087457C /* horse6Images.atlas */; };
@@ -27,9 +30,6 @@
 		B98482F828CF6AD80087457C /* gameCountdownSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = B98482F728CF6AD80087457C /* gameCountdownSound.wav */; };
 		B98482FC28CF7E160087457C /* HorseGallop.m4a in Resources */ = {isa = PBXBuildFile; fileRef = B98482FB28CF7E160087457C /* HorseGallop.m4a */; };
 		B9E1220328B3C5C400932AAE /* GameProcessingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E1220228B3C5C400932AAE /* GameProcessingView.swift */; };
-		CC2F8D5228D31D9D003C8F3F /* negativeSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = CC2F8D4F28D31D9D003C8F3F /* negativeSound.wav */; };
-		CC2F8D5328D31D9D003C8F3F /* startButtonSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = CC2F8D5028D31D9D003C8F3F /* startButtonSound.wav */; };
-		CC2F8D5428D31D9D003C8F3F /* changeSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = CC2F8D5128D31D9D003C8F3F /* changeSound.wav */; };
 		CC585C6528D2C56C000DC4A7 /* SoundSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC585C6428D2C56C000DC4A7 /* SoundSetting.swift */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +64,9 @@
 		3296D0BF2892BDE4001C1847 /* HorseRaceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HorseRaceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3296D0C32892BDE4001C1847 /* HorseRaceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorseRaceUITests.swift; sourceTree = "<group>"; };
 		3296D0C52892BDE4001C1847 /* HorseRaceUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorseRaceUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		32E19A3528D31E70007EF964 /* startButtonSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = startButtonSound.wav; sourceTree = "<group>"; };
+		32E19A3628D31E70007EF964 /* negativeSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = negativeSound.wav; sourceTree = "<group>"; };
+		32E19A3728D31E70007EF964 /* changeSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = changeSound.wav; sourceTree = "<group>"; };
 		A39FCEAC28C5ECE30078E19F /* GameStartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStartView.swift; sourceTree = "<group>"; };
 		B984828928B8434F0087457C /* horse5Images.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = horse5Images.atlas; sourceTree = "<group>"; };
 		B984828A28B8434F0087457C /* horse6Images.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = horse6Images.atlas; sourceTree = "<group>"; };
@@ -74,9 +77,6 @@
 		B98482F728CF6AD80087457C /* gameCountdownSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = gameCountdownSound.wav; sourceTree = "<group>"; };
 		B98482FB28CF7E160087457C /* HorseGallop.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = HorseGallop.m4a; sourceTree = "<group>"; };
 		B9E1220228B3C5C400932AAE /* GameProcessingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameProcessingView.swift; sourceTree = "<group>"; };
-		CC2F8D4F28D31D9D003C8F3F /* negativeSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = negativeSound.wav; path = ../../../../../../../Desktop/negativeSound.wav; sourceTree = "<group>"; };
-		CC2F8D5028D31D9D003C8F3F /* startButtonSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = startButtonSound.wav; path = ../../../../../../../Desktop/startButtonSound.wav; sourceTree = "<group>"; };
-		CC2F8D5128D31D9D003C8F3F /* changeSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = changeSound.wav; path = ../../../../../../../Desktop/changeSound.wav; sourceTree = "<group>"; };
 		CC585C6428D2C56C000DC4A7 /* SoundSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundSetting.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -171,9 +171,9 @@
 		B984829528B843610087457C /* Contents */ = {
 			isa = PBXGroup;
 			children = (
-				CC2F8D5128D31D9D003C8F3F /* changeSound.wav */,
-				CC2F8D4F28D31D9D003C8F3F /* negativeSound.wav */,
-				CC2F8D5028D31D9D003C8F3F /* startButtonSound.wav */,
+				32E19A3728D31E70007EF964 /* changeSound.wav */,
+				32E19A3628D31E70007EF964 /* negativeSound.wav */,
+				32E19A3528D31E70007EF964 /* startButtonSound.wav */,
 				B98482F728CF6AD80087457C /* gameCountdownSound.wav */,
 				B98482FB28CF7E160087457C /* HorseGallop.m4a */,
 				B984828C28B8434F0087457C /* horse1Images.atlas */,
@@ -293,16 +293,16 @@
 				B98482FC28CF7E160087457C /* HorseGallop.m4a in Resources */,
 				B98482F828CF6AD80087457C /* gameCountdownSound.wav in Resources */,
 				B984829328B8434F0087457C /* horse2Images.atlas in Resources */,
-				CC2F8D5328D31D9D003C8F3F /* startButtonSound.wav in Resources */,
 				B984829128B8434F0087457C /* horse3Images.atlas in Resources */,
+				32E19A3828D31E70007EF964 /* startButtonSound.wav in Resources */,
+				32E19A3928D31E70007EF964 /* negativeSound.wav in Resources */,
 				B984829228B8434F0087457C /* horse1Images.atlas in Resources */,
+				32E19A3A28D31E70007EF964 /* changeSound.wav in Resources */,
 				B984828F28B8434F0087457C /* horse5Images.atlas in Resources */,
-				CC2F8D5428D31D9D003C8F3F /* changeSound.wav in Resources */,
 				B984829428B8434F0087457C /* horse4Images.atlas in Resources */,
 				B984829028B8434F0087457C /* horse6Images.atlas in Resources */,
 				3296D0B02892BDE4001C1847 /* Preview Assets.xcassets in Resources */,
 				3296D0AD2892BDE4001C1847 /* Assets.xcassets in Resources */,
-				CC2F8D5228D31D9D003C8F3F /* negativeSound.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
