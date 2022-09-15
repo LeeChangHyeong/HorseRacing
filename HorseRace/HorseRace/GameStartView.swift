@@ -11,9 +11,12 @@ struct GameStartView: View {
     @Binding var mode: Mode
     @Binding var horseCount: Int
     
+
     let startButtonSound = SoundSetting(forResouce: "startButtonSound", withExtension: "wav")
     let changeButtonSound = SoundSetting(forResouce: "changeSound", withExtension: "wav")
     let negativeSound = SoundSetting(forResouce: "negativeSound", withExtension: "wav")
+
+    @State private var showCreditView = false
     
     var body: some View {
         ZStack {
@@ -25,6 +28,20 @@ struct GameStartView: View {
             
             VStack {
                 HStack {
+                    
+                    Button {
+                        showCreditView = true
+                    } label: {
+                        Image("InformationMark")
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                    }
+                    .fullScreenCover(isPresented: $showCreditView) {
+                        CreditView()
+                    }
+                    .padding()
+
+                    
                     Spacer()
                     
                     Button {

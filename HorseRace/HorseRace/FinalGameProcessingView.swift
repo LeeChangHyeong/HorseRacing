@@ -11,11 +11,17 @@ import SpriteKit
 struct FinalGameProcessingView: View {
     @Binding var mode: Mode
     @Binding var horseCount: Int
+    @Binding var resultInfo: [Int]
     
     var body: some View {
         ZStack {
-            SpriteView(scene: FinalHorseRunningScene(size: CGSize(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height), horseCount: horseCount))
+            SpriteView(scene: FinalHorseRunningScene(size: CGSize(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height), horseCount: horseCount, randomSecond: resultInfo))
                 .ignoresSafeArea()
+        }
+        .onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+                mode = .Rank
+            }
         }
     }
 }
@@ -24,7 +30,8 @@ class FinalHorseRunningScene: SKScene {
     
     let backgroundFinish = SKSpriteNode(imageNamed: "backgroundFinish")
     private var horseArray: [SKSpriteNode?] = []
-    private var randomSecond: [Int] = []
+    var randomSecond: [Int] = []
+    var getResult: () -> Void = {}
     
     private var horseRunningFrames: [SKTexture] = []
     var horseCount: Int = Int.random(in: 2...6)  // 말 마리 수 받아오기
@@ -40,9 +47,10 @@ class FinalHorseRunningScene: SKScene {
     }
     
     // 말 마리 수를 받아 올 수 있는 initializer
-    convenience init(size: CGSize, horseCount: Int) {
+    convenience init(size: CGSize, horseCount: Int, randomSecond: [Int]) {
         self.init(size: size)
         self.horseCount = horseCount
+        self.randomSecond = randomSecond
     }
     
     override func didMove(to view: SKView) {
@@ -55,7 +63,6 @@ class FinalHorseRunningScene: SKScene {
         
         for i in 1...horseCount {
             buildHorse(number: i)
-            randomSecond.append((60...120).randomElement() ?? 60 )
         }
         
         run(horseGallopSound)

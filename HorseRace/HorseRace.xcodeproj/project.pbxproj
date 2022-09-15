@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		21ED160D28D215810037CF17 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21ED160C28D215810037CF17 /* ResultView.swift */; };
+		21ED161128D216A40037CF17 /* CreditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21ED161028D216A40037CF17 /* CreditView.swift */; };
 		3284738A28B4C15100BF498D /* FinalGameProcessingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3284738928B4C15100BF498D /* FinalGameProcessingView.swift */; };
 		3296D0A92892BDE3001C1847 /* HorseRaceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3296D0A82892BDE3001C1847 /* HorseRaceApp.swift */; };
 		3296D0AB2892BDE3001C1847 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3296D0AA2892BDE3001C1847 /* ContentView.swift */; };
@@ -49,6 +51,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		21ED160C28D215810037CF17 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
+		21ED161028D216A40037CF17 /* CreditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditView.swift; sourceTree = "<group>"; };
 		3284738928B4C15100BF498D /* FinalGameProcessingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalGameProcessingView.swift; sourceTree = "<group>"; };
 		3296D0A52892BDE3001C1847 /* HorseRace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HorseRace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3296D0A82892BDE3001C1847 /* HorseRaceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorseRaceApp.swift; sourceTree = "<group>"; };
@@ -126,7 +130,9 @@
 			children = (
 				3296D0A82892BDE3001C1847 /* HorseRaceApp.swift */,
 				3296D0AA2892BDE3001C1847 /* ContentView.swift */,
+				21ED161028D216A40037CF17 /* CreditView.swift */,
 				A39FCEAC28C5ECE30078E19F /* GameStartView.swift */,
+				21ED160C28D215810037CF17 /* ResultView.swift */,
 				B9E1220228B3C5C400932AAE /* GameProcessingView.swift */,
 				3284738928B4C15100BF498D /* FinalGameProcessingView.swift */,
 				CC585C6428D2C56C000DC4A7 /* SoundSetting.swift */,
@@ -327,6 +333,8 @@
 				3296D0AB2892BDE3001C1847 /* ContentView.swift in Sources */,
 				3296D0A92892BDE3001C1847 /* HorseRaceApp.swift in Sources */,
 				B9E1220328B3C5C400932AAE /* GameProcessingView.swift in Sources */,
+				21ED160D28D215810037CF17 /* ResultView.swift in Sources */,
+				21ED161128D216A40037CF17 /* CreditView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
