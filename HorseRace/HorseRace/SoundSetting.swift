@@ -23,6 +23,12 @@ class SoundSetting {
         do {
             player = try AVAudioPlayer(contentsOf: url)
             player?.play()
+            
+            if forResource == "MA_JingleRepublic_TrendyJumpingYouth_Main" {
+                player?.numberOfLoops = 100
+                player?.volume = 0.3
+            }
+            
         } catch let error {
             print("\(error.localizedDescription)")
         }

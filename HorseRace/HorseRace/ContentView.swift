@@ -20,8 +20,6 @@ struct ContentView: View {
             }
         }
         .onAppear{
-            BGM.player?.volume = 0.3
-            BGM.player?.numberOfLoops = 100
             BGM.playSound()
         }
         .onChange(of: mode) { newValue in
