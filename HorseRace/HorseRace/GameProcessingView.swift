@@ -33,7 +33,7 @@ struct GameProcessingView: View {
             }
         }
         .onAppear() {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3.3) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                 horseSoundSetting.playSound()
             }
             
@@ -188,7 +188,7 @@ class HorseRunningScene: SKScene {
         let timePerFrame = 1 / speed
         
         // 3초간 대기하는 Action
-        let waiting = SKAction.wait(forDuration: 3.3)
+        let waiting = SKAction.wait(forDuration: 3.1)
         
         // 달리는 Action
         let runningAction = SKAction.repeatForever(SKAction.animate(with: horseRunningFrames,timePerFrame: timePerFrame)

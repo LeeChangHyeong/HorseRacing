@@ -13,13 +13,17 @@ struct FinalGameProcessingView: View {
     @Binding var horseCount: Int
     @Binding var resultInfo: [Int]
     
+    let horseSoundSetting = SoundSetting(forResouce: "HorseGallop", withExtension: "m4a")
+    
     var body: some View {
         ZStack {
             SpriteView(scene: FinalHorseRunningScene(size: CGSize(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height), horseCount: horseCount, randomSecond: resultInfo))
                 .ignoresSafeArea()
         }
         .onAppear {
+            horseSoundSetting.playSound()
             DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+                horseSoundSetting.player?.stop()
                 mode = .Rank
             }
         }
@@ -35,8 +39,6 @@ class FinalHorseRunningScene: SKScene {
     
     private var horseRunningFrames: [SKTexture] = []
     var horseCount: Int = Int.random(in: 2...6)  // 말 마리 수 받아오기
-    
-    let horseGallopSound = SKAction.playSoundFileNamed("HorseGallop.m4a", waitForCompletion: false)
     
     override init(size: CGSize) {
         super.init(size: size)
@@ -64,8 +66,6 @@ class FinalHorseRunningScene: SKScene {
         for i in 1...horseCount {
             buildHorse(number: i)
         }
-        
-        run(horseGallopSound)
     }
     
     override func update(_ currentTime: TimeInterval) {
