@@ -36,6 +36,8 @@ class FinalHorseRunningScene: SKScene {
     private var horseRunningFrames: [SKTexture] = []
     var horseCount: Int = Int.random(in: 2...6)  // 말 마리 수 받아오기
     
+    let horseGallopSound = SKAction.playSoundFileNamed("HorseGallop.m4a", waitForCompletion: false)
+    
     override init(size: CGSize) {
         super.init(size: size)
     }
@@ -62,6 +64,8 @@ class FinalHorseRunningScene: SKScene {
         for i in 1...horseCount {
             buildHorse(number: i)
         }
+        
+        run(horseGallopSound)
     }
     
     override func update(_ currentTime: TimeInterval) {

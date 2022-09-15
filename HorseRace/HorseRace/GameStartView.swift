@@ -11,6 +11,11 @@ struct GameStartView: View {
     @Binding var mode: Mode
     @Binding var horseCount: Int
     
+
+    let startButtonSound = SoundSetting(forResouce: "startButtonSound", withExtension: "wav")
+    let changeButtonSound = SoundSetting(forResouce: "changeSound", withExtension: "wav")
+    let negativeSound = SoundSetting(forResouce: "negativeSound", withExtension: "wav")
+
     @State private var showCreditView = false
     
     var body: some View {
@@ -41,7 +46,10 @@ struct GameStartView: View {
                     
                     Button {
                         if horseCount > 2 {
+                            changeButtonSound.playSound()
                             horseCount -= 1
+                        } else {
+                            negativeSound.playSound()
                         }
                     } label: {
                         Circle()
@@ -63,7 +71,10 @@ struct GameStartView: View {
                     
                     Button {
                         if horseCount < 6 {
+                            changeButtonSound.playSound()
                             horseCount += 1
+                        } else {
+                            negativeSound.playSound()
                         }
                     } label: {
                         Circle()
@@ -96,7 +107,13 @@ struct GameStartView: View {
                     .foregroundColor(Color("startBtnColor"))
                 
                 Button {
-                    mode = .FirstGame
+                    startButtonSound.playSound()
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        withAnimation(.easeInOut(duration: 0.3)) {
+                            mode = .FirstGame
+                        }
+                    }
+                    
                 } label: {
                     RoundedRectangle(cornerRadius: 10)
                         .frame(width: 92, height: 37, alignment: .center)

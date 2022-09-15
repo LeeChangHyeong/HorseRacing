@@ -24,7 +24,13 @@
 		B984829228B8434F0087457C /* horse1Images.atlas in Resources */ = {isa = PBXBuildFile; fileRef = B984828C28B8434F0087457C /* horse1Images.atlas */; };
 		B984829328B8434F0087457C /* horse2Images.atlas in Resources */ = {isa = PBXBuildFile; fileRef = B984828D28B8434F0087457C /* horse2Images.atlas */; };
 		B984829428B8434F0087457C /* horse4Images.atlas in Resources */ = {isa = PBXBuildFile; fileRef = B984828E28B8434F0087457C /* horse4Images.atlas */; };
+		B98482F828CF6AD80087457C /* gameCountdownSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = B98482F728CF6AD80087457C /* gameCountdownSound.wav */; };
+		B98482FC28CF7E160087457C /* HorseGallop.m4a in Resources */ = {isa = PBXBuildFile; fileRef = B98482FB28CF7E160087457C /* HorseGallop.m4a */; };
 		B9E1220328B3C5C400932AAE /* GameProcessingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E1220228B3C5C400932AAE /* GameProcessingView.swift */; };
+		CC585C6528D2C56C000DC4A7 /* SoundSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC585C6428D2C56C000DC4A7 /* SoundSetting.swift */; };
+		CC585C6728D2C60D000DC4A7 /* changeSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = CC585C6628D2C60D000DC4A7 /* changeSound.wav */; };
+		CC585C6928D2C61B000DC4A7 /* startButtonSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = CC585C6828D2C61B000DC4A7 /* startButtonSound.wav */; };
+		CC585C6B28D2C6F2000DC4A7 /* negativeSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = CC585C6A28D2C6F2000DC4A7 /* negativeSound.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,7 +71,13 @@
 		B984828C28B8434F0087457C /* horse1Images.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = horse1Images.atlas; sourceTree = "<group>"; };
 		B984828D28B8434F0087457C /* horse2Images.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = horse2Images.atlas; sourceTree = "<group>"; };
 		B984828E28B8434F0087457C /* horse4Images.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = horse4Images.atlas; sourceTree = "<group>"; };
+		B98482F728CF6AD80087457C /* gameCountdownSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = gameCountdownSound.wav; sourceTree = "<group>"; };
+		B98482FB28CF7E160087457C /* HorseGallop.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = HorseGallop.m4a; sourceTree = "<group>"; };
 		B9E1220228B3C5C400932AAE /* GameProcessingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameProcessingView.swift; sourceTree = "<group>"; };
+		CC585C6428D2C56C000DC4A7 /* SoundSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundSetting.swift; sourceTree = "<group>"; };
+		CC585C6628D2C60D000DC4A7 /* changeSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = changeSound.wav; path = ../../../../../../../Desktop/changeSound.wav; sourceTree = "<group>"; };
+		CC585C6828D2C61B000DC4A7 /* startButtonSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = startButtonSound.wav; path = ../../../../../../../Desktop/startButtonSound.wav; sourceTree = "<group>"; };
+		CC585C6A28D2C6F2000DC4A7 /* negativeSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = negativeSound.wav; path = ../../../../../../../Desktop/negativeSound.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +135,7 @@
 				21ED160C28D215810037CF17 /* ResultView.swift */,
 				B9E1220228B3C5C400932AAE /* GameProcessingView.swift */,
 				3284738928B4C15100BF498D /* FinalGameProcessingView.swift */,
+				CC585C6428D2C56C000DC4A7 /* SoundSetting.swift */,
 				B984829528B843610087457C /* Contents */,
 				3296D0AC2892BDE4001C1847 /* Assets.xcassets */,
 				3296D0AE2892BDE4001C1847 /* Preview Content */,
@@ -158,6 +171,11 @@
 		B984829528B843610087457C /* Contents */ = {
 			isa = PBXGroup;
 			children = (
+				CC585C6A28D2C6F2000DC4A7 /* negativeSound.wav */,
+				B98482F728CF6AD80087457C /* gameCountdownSound.wav */,
+				CC585C6828D2C61B000DC4A7 /* startButtonSound.wav */,
+				CC585C6628D2C60D000DC4A7 /* changeSound.wav */,
+				B98482FB28CF7E160087457C /* HorseGallop.m4a */,
 				B984828C28B8434F0087457C /* horse1Images.atlas */,
 				B984828D28B8434F0087457C /* horse2Images.atlas */,
 				B984828B28B8434F0087457C /* horse3Images.atlas */,
@@ -272,8 +290,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC585C6728D2C60D000DC4A7 /* changeSound.wav in Resources */,
+				B98482FC28CF7E160087457C /* HorseGallop.m4a in Resources */,
+				B98482F828CF6AD80087457C /* gameCountdownSound.wav in Resources */,
+				CC585C6928D2C61B000DC4A7 /* startButtonSound.wav in Resources */,
 				B984829328B8434F0087457C /* horse2Images.atlas in Resources */,
 				B984829128B8434F0087457C /* horse3Images.atlas in Resources */,
+				CC585C6B28D2C6F2000DC4A7 /* negativeSound.wav in Resources */,
 				B984829228B8434F0087457C /* horse1Images.atlas in Resources */,
 				B984828F28B8434F0087457C /* horse5Images.atlas in Resources */,
 				B984829428B8434F0087457C /* horse4Images.atlas in Resources */,
@@ -306,6 +329,7 @@
 			files = (
 				3284738A28B4C15100BF498D /* FinalGameProcessingView.swift in Sources */,
 				A39FCEAD28C5ECE30078E19F /* GameStartView.swift in Sources */,
+				CC585C6528D2C56C000DC4A7 /* SoundSetting.swift in Sources */,
 				3296D0AB2892BDE3001C1847 /* ContentView.swift in Sources */,
 				3296D0A92892BDE3001C1847 /* HorseRaceApp.swift in Sources */,
 				B9E1220328B3C5C400932AAE /* GameProcessingView.swift in Sources */,
