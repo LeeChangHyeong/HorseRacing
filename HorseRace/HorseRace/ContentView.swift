@@ -4,6 +4,7 @@ struct ContentView: View {
     @State var mode: Mode = .GameStart
     @State var horseCount: Int = 2
     @State var resultInfo: [Int] = []
+    let BGM = SoundSetting(forResouce: "MA_JingleRepublic_TrendyJumpingYouth_Main", withExtension: "wav")
     
     var body: some View {
         ZStack {
@@ -17,6 +18,11 @@ struct ContentView: View {
             case .Rank:
                 ResultView(mode: $mode, resultInfo: $resultInfo)
             }
+        }
+        .onAppear{
+            BGM.player?.volume = 0.3
+            BGM.player?.numberOfLoops = 100
+            BGM.playSound()
         }
         .onChange(of: mode) { newValue in
             if newValue == .GameStart || newValue == .FirstGame {
