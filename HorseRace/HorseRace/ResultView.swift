@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ResultView: View {
+    let restartButtonSound = SoundSetting(forResouce: "startButtonSound", withExtension: "wav")
     
     @Binding var mode: Mode
     @Binding var resultInfo: [Int]
@@ -181,6 +182,7 @@ struct ResultView: View {
                 
                 Button {
                     withAnimation(.spring()) {
+                        restartButtonSound.playSound()
                         mode = .GameStart
                     }
                 } label: {
