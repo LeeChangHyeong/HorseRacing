@@ -27,10 +27,10 @@
 		B98482F828CF6AD80087457C /* gameCountdownSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = B98482F728CF6AD80087457C /* gameCountdownSound.wav */; };
 		B98482FC28CF7E160087457C /* HorseGallop.m4a in Resources */ = {isa = PBXBuildFile; fileRef = B98482FB28CF7E160087457C /* HorseGallop.m4a */; };
 		B9E1220328B3C5C400932AAE /* GameProcessingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E1220228B3C5C400932AAE /* GameProcessingView.swift */; };
+		CC2F8D5228D31D9D003C8F3F /* negativeSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = CC2F8D4F28D31D9D003C8F3F /* negativeSound.wav */; };
+		CC2F8D5328D31D9D003C8F3F /* startButtonSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = CC2F8D5028D31D9D003C8F3F /* startButtonSound.wav */; };
+		CC2F8D5428D31D9D003C8F3F /* changeSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = CC2F8D5128D31D9D003C8F3F /* changeSound.wav */; };
 		CC585C6528D2C56C000DC4A7 /* SoundSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC585C6428D2C56C000DC4A7 /* SoundSetting.swift */; };
-		CC585C6728D2C60D000DC4A7 /* changeSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = CC585C6628D2C60D000DC4A7 /* changeSound.wav */; };
-		CC585C6928D2C61B000DC4A7 /* startButtonSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = CC585C6828D2C61B000DC4A7 /* startButtonSound.wav */; };
-		CC585C6B28D2C6F2000DC4A7 /* negativeSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = CC585C6A28D2C6F2000DC4A7 /* negativeSound.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,10 +74,10 @@
 		B98482F728CF6AD80087457C /* gameCountdownSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = gameCountdownSound.wav; sourceTree = "<group>"; };
 		B98482FB28CF7E160087457C /* HorseGallop.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = HorseGallop.m4a; sourceTree = "<group>"; };
 		B9E1220228B3C5C400932AAE /* GameProcessingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameProcessingView.swift; sourceTree = "<group>"; };
+		CC2F8D4F28D31D9D003C8F3F /* negativeSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = negativeSound.wav; path = ../../../../../../../Desktop/negativeSound.wav; sourceTree = "<group>"; };
+		CC2F8D5028D31D9D003C8F3F /* startButtonSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = startButtonSound.wav; path = ../../../../../../../Desktop/startButtonSound.wav; sourceTree = "<group>"; };
+		CC2F8D5128D31D9D003C8F3F /* changeSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = changeSound.wav; path = ../../../../../../../Desktop/changeSound.wav; sourceTree = "<group>"; };
 		CC585C6428D2C56C000DC4A7 /* SoundSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundSetting.swift; sourceTree = "<group>"; };
-		CC585C6628D2C60D000DC4A7 /* changeSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = changeSound.wav; path = ../../../../../../../Desktop/changeSound.wav; sourceTree = "<group>"; };
-		CC585C6828D2C61B000DC4A7 /* startButtonSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = startButtonSound.wav; path = ../../../../../../../Desktop/startButtonSound.wav; sourceTree = "<group>"; };
-		CC585C6A28D2C6F2000DC4A7 /* negativeSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = negativeSound.wav; path = ../../../../../../../Desktop/negativeSound.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,10 +171,10 @@
 		B984829528B843610087457C /* Contents */ = {
 			isa = PBXGroup;
 			children = (
-				CC585C6A28D2C6F2000DC4A7 /* negativeSound.wav */,
+				CC2F8D5128D31D9D003C8F3F /* changeSound.wav */,
+				CC2F8D4F28D31D9D003C8F3F /* negativeSound.wav */,
+				CC2F8D5028D31D9D003C8F3F /* startButtonSound.wav */,
 				B98482F728CF6AD80087457C /* gameCountdownSound.wav */,
-				CC585C6828D2C61B000DC4A7 /* startButtonSound.wav */,
-				CC585C6628D2C60D000DC4A7 /* changeSound.wav */,
 				B98482FB28CF7E160087457C /* HorseGallop.m4a */,
 				B984828C28B8434F0087457C /* horse1Images.atlas */,
 				B984828D28B8434F0087457C /* horse2Images.atlas */,
@@ -290,19 +290,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC585C6728D2C60D000DC4A7 /* changeSound.wav in Resources */,
 				B98482FC28CF7E160087457C /* HorseGallop.m4a in Resources */,
 				B98482F828CF6AD80087457C /* gameCountdownSound.wav in Resources */,
-				CC585C6928D2C61B000DC4A7 /* startButtonSound.wav in Resources */,
 				B984829328B8434F0087457C /* horse2Images.atlas in Resources */,
+				CC2F8D5328D31D9D003C8F3F /* startButtonSound.wav in Resources */,
 				B984829128B8434F0087457C /* horse3Images.atlas in Resources */,
-				CC585C6B28D2C6F2000DC4A7 /* negativeSound.wav in Resources */,
 				B984829228B8434F0087457C /* horse1Images.atlas in Resources */,
 				B984828F28B8434F0087457C /* horse5Images.atlas in Resources */,
+				CC2F8D5428D31D9D003C8F3F /* changeSound.wav in Resources */,
 				B984829428B8434F0087457C /* horse4Images.atlas in Resources */,
 				B984829028B8434F0087457C /* horse6Images.atlas in Resources */,
 				3296D0B02892BDE4001C1847 /* Preview Assets.xcassets in Resources */,
 				3296D0AD2892BDE4001C1847 /* Assets.xcassets in Resources */,
+				CC2F8D5228D31D9D003C8F3F /* negativeSound.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
