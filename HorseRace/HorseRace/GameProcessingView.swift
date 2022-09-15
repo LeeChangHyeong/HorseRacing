@@ -7,15 +7,15 @@
 
 import SwiftUI
 import SpriteKit
-import AVKit
 
 struct GameProcessingView: View {
     @Binding var mode: Mode
-    @State private var count = 3
     @Binding var horseCount: Int
+    
+    @State private var count = 3 // countDown 숫자
     @State private var animationAmount = -90.0
     
-    var soundSetting = SoundSetting()
+    let horseSoundSetting = SoundSetting(forResouce: "HorseGallop", withExtension: "m4a")
     
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
@@ -34,7 +34,7 @@ struct GameProcessingView: View {
         }
         .onAppear() {
             DispatchQueue.main.asyncAfter(deadline: .now() + 3.3) {
-                SoundSetting.sound.playSound()
+                horseSoundSetting.playSound()
             }
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 11) {
@@ -200,23 +200,5 @@ class HorseRunningScene: SKScene {
                           withKey: "horse\(number)Running"
             )
         }
-    }
-}
-
-class SoundSetting: ObservableObject {
-    static let sound = SoundSetting()
-    
-    var player: AVAudioPlayer?
-    
-    func playSound() {
-        guard let url = Bundle.main.url(forResource: "HorseGallop", withExtension: "m4a") else { return }
-        
-        do {
-            player = try AVAudioPlayer(contentsOf: url)
-            player?.play()
-        } catch let error {
-            print("\(error.localizedDescription)")
-        }
-        
     }
 }
