@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SpriteKit
 
 struct ResultView: View {
     let restartButtonSound = SoundSetting(forResouce: "startButtonSound", withExtension: "wav")
@@ -90,6 +91,9 @@ struct ResultView: View {
             Color(hex: "EBDCCC")
                 .ignoresSafeArea()
             
+            // spriteKit view
+            SpriteView(scene: EndParticlesScene(size: CGSize(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)), options: [.allowsTransparency])
+            
             VStack(spacing: 12) {
                 Image("Ranking")
                     .resizable()
@@ -155,8 +159,7 @@ struct ResultView: View {
                                             .lineLimit(1)
                                             .minimumScaleFactor(0.8)
                                     }
-                                    
-    //
+
                                     Text(getTimeLiteral(second))
                                         .font(.subheadline)
                                         .bold()
@@ -201,6 +204,8 @@ struct ResultView: View {
             }
             .padding(.horizontal, 60)
             .padding(.vertical, 38)
+            
+
         }
         .ignoresSafeArea()
     }
