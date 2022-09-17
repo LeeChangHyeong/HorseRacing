@@ -11,7 +11,7 @@
 - Game
 - 가로 전용 모드
 - 기기별 대응
-- iOS 13 부터 지원
+- iOS 15 부터 지원
 
 
 ## :people_hugging: Authors
