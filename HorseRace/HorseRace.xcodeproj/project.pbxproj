@@ -22,6 +22,8 @@
 		32E19A3A28D31E70007EF964 /* changeSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32E19A3728D31E70007EF964 /* changeSound.wav */; };
 		32E19A3C28D32FB5007EF964 /* MA_JingleRepublic_TrendyJumpingYouth_Main.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32E19A3B28D32FB5007EF964 /* MA_JingleRepublic_TrendyJumpingYouth_Main.wav */; };
 		A39FCEAD28C5ECE30078E19F /* GameStartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39FCEAC28C5ECE30078E19F /* GameStartView.swift */; };
+		A3E0FD4228D5AC3800E48092 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3E0FD4128D5AC3800E48092 /* Launch Screen.storyboard */; };
+		A3E0FD4428D5AD3300E48092 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E0FD4328D5AD3300E48092 /* AppDelegate.swift */; };
 		B984828F28B8434F0087457C /* horse5Images.atlas in Resources */ = {isa = PBXBuildFile; fileRef = B984828928B8434F0087457C /* horse5Images.atlas */; };
 		B984829028B8434F0087457C /* horse6Images.atlas in Resources */ = {isa = PBXBuildFile; fileRef = B984828A28B8434F0087457C /* horse6Images.atlas */; };
 		B984829128B8434F0087457C /* horse3Images.atlas in Resources */ = {isa = PBXBuildFile; fileRef = B984828B28B8434F0087457C /* horse3Images.atlas */; };
@@ -72,6 +74,8 @@
 		32E19A3728D31E70007EF964 /* changeSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = changeSound.wav; sourceTree = "<group>"; };
 		32E19A3B28D32FB5007EF964 /* MA_JingleRepublic_TrendyJumpingYouth_Main.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = MA_JingleRepublic_TrendyJumpingYouth_Main.wav; sourceTree = "<group>"; };
 		A39FCEAC28C5ECE30078E19F /* GameStartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStartView.swift; sourceTree = "<group>"; };
+		A3E0FD4128D5AC3800E48092 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		A3E0FD4328D5AD3300E48092 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B984828928B8434F0087457C /* horse5Images.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = horse5Images.atlas; sourceTree = "<group>"; };
 		B984828A28B8434F0087457C /* horse6Images.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = horse6Images.atlas; sourceTree = "<group>"; };
 		B984828B28B8434F0087457C /* horse3Images.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = horse3Images.atlas; sourceTree = "<group>"; };
@@ -147,6 +151,8 @@
 				B984829528B843610087457C /* Contents */,
 				3296D0AC2892BDE4001C1847 /* Assets.xcassets */,
 				3296D0AE2892BDE4001C1847 /* Preview Content */,
+				A3E0FD4128D5AC3800E48092 /* Launch Screen.storyboard */,
+				A3E0FD4328D5AD3300E48092 /* AppDelegate.swift */,
 			);
 			path = HorseRace;
 			sourceTree = "<group>";
@@ -309,6 +315,7 @@
 				32E19A3A28D31E70007EF964 /* changeSound.wav in Resources */,
 				CCFCB56228D3486D00F611B0 /* endParticle.sks in Resources */,
 				B984828F28B8434F0087457C /* horse5Images.atlas in Resources */,
+				A3E0FD4228D5AC3800E48092 /* Launch Screen.storyboard in Resources */,
 				B984829428B8434F0087457C /* horse4Images.atlas in Resources */,
 				B984829028B8434F0087457C /* horse6Images.atlas in Resources */,
 				32E19A3C28D32FB5007EF964 /* MA_JingleRepublic_TrendyJumpingYouth_Main.wav in Resources */,
@@ -346,6 +353,7 @@
 				3296D0A92892BDE3001C1847 /* HorseRaceApp.swift in Sources */,
 				B9E1220328B3C5C400932AAE /* GameProcessingView.swift in Sources */,
 				21ED160D28D215810037CF17 /* ResultView.swift in Sources */,
+				A3E0FD4428D5AD3300E48092 /* AppDelegate.swift in Sources */,
 				21ED161128D216A40037CF17 /* CreditView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -512,6 +520,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -543,6 +552,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
