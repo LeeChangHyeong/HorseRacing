@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		21ED160D28D215810037CF17 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21ED160C28D215810037CF17 /* ResultView.swift */; };
+		21ED161128D216A40037CF17 /* CreditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21ED161028D216A40037CF17 /* CreditView.swift */; };
+		3284738A28B4C15100BF498D /* FinalGameProcessingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3284738928B4C15100BF498D /* FinalGameProcessingView.swift */; };
 		3296D0A92892BDE3001C1847 /* HorseRaceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3296D0A82892BDE3001C1847 /* HorseRaceApp.swift */; };
 		3296D0AB2892BDE3001C1847 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3296D0AA2892BDE3001C1847 /* ContentView.swift */; };
 		3296D0AD2892BDE4001C1847 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3296D0AC2892BDE4001C1847 /* Assets.xcassets */; };
@@ -14,6 +17,25 @@
 		3296D0BA2892BDE4001C1847 /* HorseRaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3296D0B92892BDE4001C1847 /* HorseRaceTests.swift */; };
 		3296D0C42892BDE4001C1847 /* HorseRaceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3296D0C32892BDE4001C1847 /* HorseRaceUITests.swift */; };
 		3296D0C62892BDE4001C1847 /* HorseRaceUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3296D0C52892BDE4001C1847 /* HorseRaceUITestsLaunchTests.swift */; };
+		32E19A3828D31E70007EF964 /* startButtonSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32E19A3528D31E70007EF964 /* startButtonSound.wav */; };
+		32E19A3928D31E70007EF964 /* negativeSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32E19A3628D31E70007EF964 /* negativeSound.wav */; };
+		32E19A3A28D31E70007EF964 /* changeSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32E19A3728D31E70007EF964 /* changeSound.wav */; };
+		32E19A3C28D32FB5007EF964 /* MA_JingleRepublic_TrendyJumpingYouth_Main.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32E19A3B28D32FB5007EF964 /* MA_JingleRepublic_TrendyJumpingYouth_Main.wav */; };
+		A39FCEAD28C5ECE30078E19F /* GameStartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39FCEAC28C5ECE30078E19F /* GameStartView.swift */; };
+		A3E0FD4228D5AC3800E48092 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3E0FD4128D5AC3800E48092 /* Launch Screen.storyboard */; };
+		A3E0FD4428D5AD3300E48092 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E0FD4328D5AD3300E48092 /* AppDelegate.swift */; };
+		B984828F28B8434F0087457C /* horse5Images.atlas in Resources */ = {isa = PBXBuildFile; fileRef = B984828928B8434F0087457C /* horse5Images.atlas */; };
+		B984829028B8434F0087457C /* horse6Images.atlas in Resources */ = {isa = PBXBuildFile; fileRef = B984828A28B8434F0087457C /* horse6Images.atlas */; };
+		B984829128B8434F0087457C /* horse3Images.atlas in Resources */ = {isa = PBXBuildFile; fileRef = B984828B28B8434F0087457C /* horse3Images.atlas */; };
+		B984829228B8434F0087457C /* horse1Images.atlas in Resources */ = {isa = PBXBuildFile; fileRef = B984828C28B8434F0087457C /* horse1Images.atlas */; };
+		B984829328B8434F0087457C /* horse2Images.atlas in Resources */ = {isa = PBXBuildFile; fileRef = B984828D28B8434F0087457C /* horse2Images.atlas */; };
+		B984829428B8434F0087457C /* horse4Images.atlas in Resources */ = {isa = PBXBuildFile; fileRef = B984828E28B8434F0087457C /* horse4Images.atlas */; };
+		B98482F828CF6AD80087457C /* gameCountdownSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = B98482F728CF6AD80087457C /* gameCountdownSound.wav */; };
+		B98482FC28CF7E160087457C /* HorseGallop.m4a in Resources */ = {isa = PBXBuildFile; fileRef = B98482FB28CF7E160087457C /* HorseGallop.m4a */; };
+		B9E1220328B3C5C400932AAE /* GameProcessingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E1220228B3C5C400932AAE /* GameProcessingView.swift */; };
+		CC2F8D6428D34557003C8F3F /* EndParticles.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2F8D6328D34557003C8F3F /* EndParticles.swift */; };
+		CC585C6528D2C56C000DC4A7 /* SoundSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC585C6428D2C56C000DC4A7 /* SoundSetting.swift */; };
+		CCFCB56228D3486D00F611B0 /* endParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = CCFCB56128D3486D00F611B0 /* endParticle.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +56,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		21ED160C28D215810037CF17 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
+		21ED161028D216A40037CF17 /* CreditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditView.swift; sourceTree = "<group>"; };
+		3284738928B4C15100BF498D /* FinalGameProcessingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalGameProcessingView.swift; sourceTree = "<group>"; };
 		3296D0A52892BDE3001C1847 /* HorseRace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HorseRace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3296D0A82892BDE3001C1847 /* HorseRaceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorseRaceApp.swift; sourceTree = "<group>"; };
 		3296D0AA2892BDE3001C1847 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -44,6 +69,25 @@
 		3296D0BF2892BDE4001C1847 /* HorseRaceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HorseRaceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3296D0C32892BDE4001C1847 /* HorseRaceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorseRaceUITests.swift; sourceTree = "<group>"; };
 		3296D0C52892BDE4001C1847 /* HorseRaceUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorseRaceUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		32E19A3528D31E70007EF964 /* startButtonSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = startButtonSound.wav; sourceTree = "<group>"; };
+		32E19A3628D31E70007EF964 /* negativeSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = negativeSound.wav; sourceTree = "<group>"; };
+		32E19A3728D31E70007EF964 /* changeSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = changeSound.wav; sourceTree = "<group>"; };
+		32E19A3B28D32FB5007EF964 /* MA_JingleRepublic_TrendyJumpingYouth_Main.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = MA_JingleRepublic_TrendyJumpingYouth_Main.wav; sourceTree = "<group>"; };
+		A39FCEAC28C5ECE30078E19F /* GameStartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStartView.swift; sourceTree = "<group>"; };
+		A3E0FD4128D5AC3800E48092 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		A3E0FD4328D5AD3300E48092 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B984828928B8434F0087457C /* horse5Images.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = horse5Images.atlas; sourceTree = "<group>"; };
+		B984828A28B8434F0087457C /* horse6Images.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = horse6Images.atlas; sourceTree = "<group>"; };
+		B984828B28B8434F0087457C /* horse3Images.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = horse3Images.atlas; sourceTree = "<group>"; };
+		B984828C28B8434F0087457C /* horse1Images.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = horse1Images.atlas; sourceTree = "<group>"; };
+		B984828D28B8434F0087457C /* horse2Images.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = horse2Images.atlas; sourceTree = "<group>"; };
+		B984828E28B8434F0087457C /* horse4Images.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = horse4Images.atlas; sourceTree = "<group>"; };
+		B98482F728CF6AD80087457C /* gameCountdownSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = gameCountdownSound.wav; sourceTree = "<group>"; };
+		B98482FB28CF7E160087457C /* HorseGallop.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = HorseGallop.m4a; sourceTree = "<group>"; };
+		B9E1220228B3C5C400932AAE /* GameProcessingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameProcessingView.swift; sourceTree = "<group>"; };
+		CC2F8D6328D34557003C8F3F /* EndParticles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndParticles.swift; sourceTree = "<group>"; };
+		CC585C6428D2C56C000DC4A7 /* SoundSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundSetting.swift; sourceTree = "<group>"; };
+		CCFCB56128D3486D00F611B0 /* endParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = endParticle.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,8 +140,19 @@
 			children = (
 				3296D0A82892BDE3001C1847 /* HorseRaceApp.swift */,
 				3296D0AA2892BDE3001C1847 /* ContentView.swift */,
+				21ED161028D216A40037CF17 /* CreditView.swift */,
+				A39FCEAC28C5ECE30078E19F /* GameStartView.swift */,
+				21ED160C28D215810037CF17 /* ResultView.swift */,
+				B9E1220228B3C5C400932AAE /* GameProcessingView.swift */,
+				3284738928B4C15100BF498D /* FinalGameProcessingView.swift */,
+				CC585C6428D2C56C000DC4A7 /* SoundSetting.swift */,
+				CC2F8D6328D34557003C8F3F /* EndParticles.swift */,
+				CCFCB56128D3486D00F611B0 /* endParticle.sks */,
+				B984829528B843610087457C /* Contents */,
 				3296D0AC2892BDE4001C1847 /* Assets.xcassets */,
 				3296D0AE2892BDE4001C1847 /* Preview Content */,
+				A3E0FD4128D5AC3800E48092 /* Launch Screen.storyboard */,
+				A3E0FD4328D5AD3300E48092 /* AppDelegate.swift */,
 			);
 			path = HorseRace;
 			sourceTree = "<group>";
@@ -125,6 +180,25 @@
 				3296D0C52892BDE4001C1847 /* HorseRaceUITestsLaunchTests.swift */,
 			);
 			path = HorseRaceUITests;
+			sourceTree = "<group>";
+		};
+		B984829528B843610087457C /* Contents */ = {
+			isa = PBXGroup;
+			children = (
+				32E19A3B28D32FB5007EF964 /* MA_JingleRepublic_TrendyJumpingYouth_Main.wav */,
+				32E19A3728D31E70007EF964 /* changeSound.wav */,
+				32E19A3628D31E70007EF964 /* negativeSound.wav */,
+				32E19A3528D31E70007EF964 /* startButtonSound.wav */,
+				B98482F728CF6AD80087457C /* gameCountdownSound.wav */,
+				B98482FB28CF7E160087457C /* HorseGallop.m4a */,
+				B984828C28B8434F0087457C /* horse1Images.atlas */,
+				B984828D28B8434F0087457C /* horse2Images.atlas */,
+				B984828B28B8434F0087457C /* horse3Images.atlas */,
+				B984828E28B8434F0087457C /* horse4Images.atlas */,
+				B984828928B8434F0087457C /* horse5Images.atlas */,
+				B984828A28B8434F0087457C /* horse6Images.atlas */,
+			);
+			path = Contents;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,6 +305,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B98482FC28CF7E160087457C /* HorseGallop.m4a in Resources */,
+				B98482F828CF6AD80087457C /* gameCountdownSound.wav in Resources */,
+				B984829328B8434F0087457C /* horse2Images.atlas in Resources */,
+				B984829128B8434F0087457C /* horse3Images.atlas in Resources */,
+				32E19A3828D31E70007EF964 /* startButtonSound.wav in Resources */,
+				32E19A3928D31E70007EF964 /* negativeSound.wav in Resources */,
+				B984829228B8434F0087457C /* horse1Images.atlas in Resources */,
+				32E19A3A28D31E70007EF964 /* changeSound.wav in Resources */,
+				CCFCB56228D3486D00F611B0 /* endParticle.sks in Resources */,
+				B984828F28B8434F0087457C /* horse5Images.atlas in Resources */,
+				A3E0FD4228D5AC3800E48092 /* Launch Screen.storyboard in Resources */,
+				B984829428B8434F0087457C /* horse4Images.atlas in Resources */,
+				B984829028B8434F0087457C /* horse6Images.atlas in Resources */,
+				32E19A3C28D32FB5007EF964 /* MA_JingleRepublic_TrendyJumpingYouth_Main.wav in Resources */,
 				3296D0B02892BDE4001C1847 /* Preview Assets.xcassets in Resources */,
 				3296D0AD2892BDE4001C1847 /* Assets.xcassets in Resources */,
 			);
@@ -257,8 +345,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC2F8D6428D34557003C8F3F /* EndParticles.swift in Sources */,
+				3284738A28B4C15100BF498D /* FinalGameProcessingView.swift in Sources */,
+				A39FCEAD28C5ECE30078E19F /* GameStartView.swift in Sources */,
+				CC585C6528D2C56C000DC4A7 /* SoundSetting.swift in Sources */,
 				3296D0AB2892BDE3001C1847 /* ContentView.swift in Sources */,
 				3296D0A92892BDE3001C1847 /* HorseRaceApp.swift in Sources */,
+				B9E1220328B3C5C400932AAE /* GameProcessingView.swift in Sources */,
+				21ED160D28D215810037CF17 /* ResultView.swift in Sources */,
+				A3E0FD4428D5AD3300E48092 /* AppDelegate.swift in Sources */,
+				21ED161128D216A40037CF17 /* CreditView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,11 +516,14 @@
 				DEVELOPMENT_TEAM = FRZRS5Y9L6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "내가사마";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -432,9 +531,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.changBro.HorseRace;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -449,11 +551,14 @@
 				DEVELOPMENT_TEAM = FRZRS5Y9L6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "내가사마";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -461,9 +566,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.changBro.HorseRace;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

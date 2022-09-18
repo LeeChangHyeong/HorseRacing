@@ -1,21 +1,46 @@
-//
-//  ContentView.swift
-//  HorseRace
-//
-//  Created by LeeChangHyeong on 2022/07/28.
-//
-
 import SwiftUI
 
 struct ContentView: View {
+    @State var mode: Mode = .GameStart
+    @State var horseCount: Int = 2
+    @State var resultInfo: [Int] = []
+    let BGM = SoundSetting(forResouce: "MA_JingleRepublic_TrendyJumpingYouth_Main", withExtension: "wav")
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        ZStack {
+            switch mode {
+            case .GameStart:
+                GameStartView(mode: $mode, horseCount: $horseCount)
+            case .FirstGame:
+                GameProcessingView(mode: $mode, horseCount: $horseCount)
+            case .LastGame:
+                FinalGameProcessingView(mode: $mode, horseCount: $horseCount, resultInfo: $resultInfo)
+            case .Rank:
+                ResultView(mode: $mode, resultInfo: $resultInfo)
+            }
+        }
+        .onAppear{
+            BGM.playSound()
+        }
+        .onChange(of: mode) { newValue in
+            if newValue == .GameStart || newValue == .FirstGame {
+                setNewSpeed()
+            }
+        }
+
+    }
+    
+    private func setNewSpeed() {
+        resultInfo = []
+        for _ in 1...horseCount {
+            resultInfo.append((60...120).randomElement() ?? 60 )
+        }
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+enum Mode {
+    case GameStart
+    case FirstGame
+    case LastGame
+    case Rank
 }
