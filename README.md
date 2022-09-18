@@ -1,10 +1,10 @@
 
-![Logo](https://user-images.githubusercontent.com/96639917/190843794-d2bec438-d033-471c-8a23-c1c02edf89e6.png)
+![GitHub_README](https://user-images.githubusercontent.com/45297745/190897925-49190fd2-559f-41a3-9557-f30ea6da4d7b.png)
 
 # :iphone: 내가사마
 
 간단한 경주마를 통해 주변 지인들과 내기를 즐길수 있는 앱입니다.
-
+An app where you can enjoy simple bets with your friends through racehorses
 
 ## :pushpin: Features
 
