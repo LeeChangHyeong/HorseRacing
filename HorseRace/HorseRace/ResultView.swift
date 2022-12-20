@@ -13,13 +13,16 @@ struct ResultView: View {
     
     @Binding var mode: Mode
     @Binding var resultInfo: [Int]
+    @Binding var horseNames: [String]
+    
     typealias RankingInfo = (horseNum: Int, second: Float)
     @State private var capsuleWidth: CGFloat = .zero
     @State private var circleWidth: CGFloat = .zero
     
-    init(mode: Binding<Mode>, resultInfo: Binding<[Int]>) {
+    init(mode: Binding<Mode>, resultInfo: Binding<[Int]>, horseNames: Binding<[String]>) {
         self._mode = mode
         self._resultInfo = resultInfo
+        self._horseNames = horseNames
         if resultInfo.count == 2 || resultInfo.count == 4 {
             self.rows = Array<GridItem>(repeating: GridItem(.flexible(), spacing: 8, alignment: .leading),
                                         count: 2)
@@ -118,13 +121,13 @@ struct ResultView: View {
                                     .foregroundColor(.black)
                                     .font(.footnote.bold())
                                     .frame(width: circleWidth)
-
+                                
                                 HStack {
                                     Text("경주마")
                                         .foregroundColor(.black)
                                         .font(.footnote.bold())
                                         .frame(maxWidth: .infinity)
-
+                                    
                                     Text("걸린시간")
                                         .foregroundColor(.black)
                                         .font(.footnote.bold())
@@ -150,34 +153,40 @@ struct ResultView: View {
                                 .onPreferenceChange(SizePreferenceKey.self) { size in
                                     circleWidth = size.width
                                 }
-
+                            
                             HStack(spacing: 0) {
                                 Image("horse\(num+1)\(rankingInfo.count < 4 ? "byOne" : "byTwo")")
                                     .resizable()
                                     .scaledToFit()
                                     .clipShape(Capsule())
-
+                                
                                 HStack(spacing: 12) {
                                     VStack(alignment: .leading, spacing: 0) {
-                                        Text("\(num+1)번마")
-                                            .bold()
-                                            .foregroundColor(Color(hex: "481B15"))
-
-                                        Text("Number \(numString(num+1))")
-                                            .font(.caption)
-                                            .foregroundColor(Color(hex: "9E7B76"))
-                                            .frame(maxWidth: 80)
-                                            .lineLimit(1)
-                                            .minimumScaleFactor(0.8)
+                                        if horseNames[num] == ""{
+                                            Text("\(num + 1)번마")
+                                                .bold()
+                                                .foregroundColor(Color(hex: "481B15"))
+                                        } else {
+                                            Text("\(horseNames[num])")
+                                                .bold()
+                                                .foregroundColor(Color(hex: "481B15"))
+                                        }
+                                        
+                                        //                                        Text("Number \(numString(num+1))")
+                                        //                                            .font(.caption)
+                                        //                                            .foregroundColor(Color(hex: "9E7B76"))
+                                        //                                            .frame(maxWidth: 80)
+                                        //                                            .lineLimit(1)
+                                        //                                            .minimumScaleFactor(0.8)
                                     }
-
+                                    
                                     Text(getTimeLiteral(second))
                                         .font(.subheadline)
                                         .bold()
                                         .lineLimit(1)
                                         .minimumScaleFactor(0.6)
                                         .foregroundColor(Color(hex: "481B15"))
-
+                                    
                                 }
                             }
                             .padding(.trailing, 30)
@@ -216,7 +225,7 @@ struct ResultView: View {
             .padding(.horizontal, 60)
             .padding(.vertical, 38)
             
-
+            
         }
         .ignoresSafeArea()
     }
@@ -227,7 +236,7 @@ struct ResultView: View {
         let millisecond = value - Float(second)
         return String(second) + "s " + String(format: "%.2f", millisecond).dropFirst(2) + "ms"
     }
-
+    
     struct RankingGridView<ItemView: View>: View {
         
         var num: Int
@@ -326,16 +335,16 @@ struct ResultView: View {
     }
 }
 
-struct ResultView_Previews: PreviewProvider {
-
-    private static var info = [108, 42, 50]
-
-    static var previews: some View {
-        ResultView(mode: .constant(.Rank), resultInfo: .constant(info))
-            .previewDevice(PreviewDevice(rawValue: "iPhone 13"))
-            .previewInterfaceOrientation(.landscapeLeft)
-    }
-}
+//struct ResultView_Previews: PreviewProvider {
+//
+//    private static var info = [108, 42, 50]
+//
+//    static var previews: some View {
+//        ResultView(mode: .constant(.Rank), resultInfo: .constant(info), horseNames: <#Binding<[String]>#>)
+//            .previewDevice(PreviewDevice(rawValue: "iPhone 13"))
+//            .previewInterfaceOrientation(.landscapeLeft)
+//    }
+//}
 
 struct SizePreferenceKey: PreferenceKey {
     static var defaultValue: CGSize = .zero

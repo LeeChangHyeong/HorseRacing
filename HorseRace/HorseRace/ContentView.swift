@@ -4,19 +4,20 @@ struct ContentView: View {
     @State var mode: Mode = .GameStart
     @State var horseCount: Int = 2
     @State var resultInfo: [Int] = []
+    @State var horseNames = ["1번마", "2번마", "3번마", "4번마", "5번마", "6번마", "7번마", "8번마"]
     let BGM = SoundSetting(forResouce: "MA_JingleRepublic_TrendyJumpingYouth_Main", withExtension: "wav")
     
     var body: some View {
         ZStack {
             switch mode {
             case .GameStart:
-                GameStartView(mode: $mode, horseCount: $horseCount)
+                GameStartView(mode: $mode, horseCount: $horseCount, horseNames: $horseNames)
             case .FirstGame:
                 GameProcessingView(mode: $mode, horseCount: $horseCount)
             case .LastGame:
                 FinalGameProcessingView(mode: $mode, horseCount: $horseCount, resultInfo: $resultInfo)
             case .Rank:
-                ResultView(mode: $mode, resultInfo: $resultInfo)
+                ResultView(mode: $mode, resultInfo: $resultInfo, horseNames: $horseNames)
             }
         }
         .onAppear{
