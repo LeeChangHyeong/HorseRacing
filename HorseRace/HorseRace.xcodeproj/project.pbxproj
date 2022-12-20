@@ -17,6 +17,7 @@
 		3296D0BA2892BDE4001C1847 /* HorseRaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3296D0B92892BDE4001C1847 /* HorseRaceTests.swift */; };
 		3296D0C42892BDE4001C1847 /* HorseRaceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3296D0C32892BDE4001C1847 /* HorseRaceUITests.swift */; };
 		3296D0C62892BDE4001C1847 /* HorseRaceUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3296D0C52892BDE4001C1847 /* HorseRaceUITestsLaunchTests.swift */; };
+		32AD9CC42951C2690042D445 /* Extension+KeyBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AD9CC32951C2690042D445 /* Extension+KeyBoard.swift */; };
 		32E19A3828D31E70007EF964 /* startButtonSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32E19A3528D31E70007EF964 /* startButtonSound.wav */; };
 		32E19A3928D31E70007EF964 /* negativeSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32E19A3628D31E70007EF964 /* negativeSound.wav */; };
 		32E19A3A28D31E70007EF964 /* changeSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32E19A3728D31E70007EF964 /* changeSound.wav */; };
@@ -71,6 +72,7 @@
 		3296D0BF2892BDE4001C1847 /* HorseRaceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HorseRaceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3296D0C32892BDE4001C1847 /* HorseRaceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorseRaceUITests.swift; sourceTree = "<group>"; };
 		3296D0C52892BDE4001C1847 /* HorseRaceUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorseRaceUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		32AD9CC32951C2690042D445 /* Extension+KeyBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+KeyBoard.swift"; sourceTree = "<group>"; };
 		32E19A3528D31E70007EF964 /* startButtonSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = startButtonSound.wav; sourceTree = "<group>"; };
 		32E19A3628D31E70007EF964 /* negativeSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = negativeSound.wav; sourceTree = "<group>"; };
 		32E19A3728D31E70007EF964 /* changeSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = changeSound.wav; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				3296D0AE2892BDE4001C1847 /* Preview Content */,
 				A3E0FD4128D5AC3800E48092 /* Launch Screen.storyboard */,
 				A3E0FD4328D5AD3300E48092 /* AppDelegate.swift */,
+				32AD9CC32951C2690042D445 /* Extension+KeyBoard.swift */,
 			);
 			path = HorseRace;
 			sourceTree = "<group>";
@@ -354,6 +357,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC2F8D6428D34557003C8F3F /* EndParticles.swift in Sources */,
+				32AD9CC42951C2690042D445 /* Extension+KeyBoard.swift in Sources */,
 				3284738A28B4C15100BF498D /* FinalGameProcessingView.swift in Sources */,
 				A39FCEAD28C5ECE30078E19F /* GameStartView.swift in Sources */,
 				CC585C6528D2C56C000DC4A7 /* SoundSetting.swift in Sources */,
