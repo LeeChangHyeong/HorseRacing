@@ -295,6 +295,32 @@ struct ResultView: View {
                         }
                     }
                 }
+            } else if num == 7 {
+                HStack(alignment: .top, spacing: 20) {
+                    VStack(spacing: 8) {
+                        ForEach(0..<4, id: \.self) { i in
+                            content(i, rankingInfo[i].horseNum, rankingInfo[i].second)
+                        }
+                    }
+                    VStack(spacing: 8) {
+                        ForEach(4..<7, id: \.self) { i in
+                            content(i, rankingInfo[i].horseNum, rankingInfo[i].second)
+                        }
+                    }
+                }
+            } else if num == 8 {
+                HStack(alignment: .top, spacing: 20) {
+                    VStack(spacing: 8) {
+                        ForEach(0..<4, id: \.self) { i in
+                            content(i, rankingInfo[i].horseNum, rankingInfo[i].second)
+                        }
+                    }
+                    VStack(spacing: 8) {
+                        ForEach(4..<8, id: \.self) { i in
+                            content(i, rankingInfo[i].horseNum, rankingInfo[i].second)
+                        }
+                    }
+                }
             }
         }
     }
