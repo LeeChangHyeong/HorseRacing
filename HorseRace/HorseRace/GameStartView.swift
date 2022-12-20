@@ -70,7 +70,7 @@ struct GameStartView: View {
                         .padding(.top, 25)
                     
                     Button {
-                        if horseCount < 6 {
+                        if horseCount < 8 {
                             changeButtonSound.playSound()
                             horseCount += 1
                         } else {
