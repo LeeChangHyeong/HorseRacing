@@ -315,6 +315,8 @@ struct ResultView: View {
                         ForEach(4..<7, id: \.self) { i in
                             content(i, rankingInfo[i].horseNum, rankingInfo[i].second)
                         }
+                        content(0, rankingInfo[0].horseNum, rankingInfo[0].second)
+                            .opacity(0)
                     }
                 }
             } else if num == 8 {
