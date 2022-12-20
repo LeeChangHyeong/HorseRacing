@@ -160,37 +160,29 @@ struct ResultView: View {
                                     .scaledToFit()
                                     .clipShape(Capsule())
                                 
-                                HStack(spacing: 12) {
-                                    VStack(alignment: .leading, spacing: 0) {
-                                        if horseNames[num] == ""{
-                                            Text("\(num + 1)번마")
-                                                .bold()
-                                                .foregroundColor(Color(hex: "481B15"))
-                                        } else {
-                                            Text("\(horseNames[num])")
-                                                .bold()
-                                                .foregroundColor(Color(hex: "481B15"))
-                                        }
-                                        
-                                        //                                        Text("Number \(numString(num+1))")
-                                        //                                            .font(.caption)
-                                        //                                            .foregroundColor(Color(hex: "9E7B76"))
-                                        //                                            .frame(maxWidth: 80)
-                                        //                                            .lineLimit(1)
-                                        //                                            .minimumScaleFactor(0.8)
-                                    }
-                                    
-                                    Text(getTimeLiteral(second))
-                                        .font(.subheadline)
+                                Spacer()
+                                
+                                HStack(spacing: 0) {
+                                    Text(horseNames[num] == "" ? "\(num + 1)번마" : "\(horseNames[num])")
                                         .bold()
                                         .lineLimit(1)
                                         .minimumScaleFactor(0.6)
                                         .foregroundColor(Color(hex: "481B15"))
                                     
+                                    Spacer()
+                                    
+                                    Text(getTimeLiteral(second))
+                                        .font(.subheadline)
+                                        .bold()
+                                        .multilineTextAlignment(.leading)
+                                        .lineLimit(1)
+                                        .foregroundColor(Color(hex: "481B15"))
+                                        .padding(.trailing, 30)
+                                        .frame(width: 100)
+                                    
                                 }
                             }
-                            .padding(.trailing, 30)
-                            .frame(maxHeight: 65)
+                            .frame(minWidth: 180, maxWidth: 280, maxHeight: 65)
                             .background(
                                 Capsule()
                                     .fill(Color.white)
