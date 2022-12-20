@@ -10,6 +10,7 @@ import SwiftUI
 struct GameStartView: View {
     @Binding var mode: Mode
     @Binding var horseCount: Int
+    @Binding var horseNames: [String]
     
 
     let startButtonSound = SoundSetting(forResouce: "startButtonSound", withExtension: "wav")
@@ -94,9 +95,14 @@ struct GameStartView: View {
                 
                 HStack(spacing: 0) {
                     ForEach(1...horseCount, id:\.self) { num in
-                        Image("horse\(num)").resizable()
-                            .frame(maxHeight: 200, alignment: .center)
-                            .scaledToFit()
+                        VStack {
+                            Image("horse\(num)").resizable()
+                                .frame(maxHeight: 200, alignment: .center)
+                                .scaledToFit()
+                    
+                                TextField("\(num)번마", text: $horseNames[num - 1])
+                                .multilineTextAlignment(.center)
+                        }
                     }
                 }
                 .padding(.horizontal)
@@ -126,6 +132,9 @@ struct GameStartView: View {
                         .padding()
                 }
             }
+        }
+        .onTapGesture {
+            self.endTextEditing()
         }
     }
 }
