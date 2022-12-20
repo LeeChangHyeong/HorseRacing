@@ -133,5 +133,8 @@ struct GameStartView: View {
                 }
             }
         }
+        .onTapGesture {
+            self.endTextEditing()
+        }
     }
 }
