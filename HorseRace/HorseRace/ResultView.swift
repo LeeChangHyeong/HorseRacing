@@ -23,9 +23,12 @@ struct ResultView: View {
         if resultInfo.count == 2 || resultInfo.count == 4 {
             self.rows = Array<GridItem>(repeating: GridItem(.flexible(), spacing: 8, alignment: .leading),
                                         count: 2)
-        } else {
+        } else if resultInfo.count == 3 || resultInfo.count == 5 || resultInfo.count == 6 {
             self.rows = Array<GridItem>(repeating: GridItem(.flexible(), spacing: 8, alignment: .leading),
                                         count: 3)
+        } else {
+            self.rows = Array<GridItem>(repeating: GridItem(.flexible(), spacing: 8, alignment: .leading),
+                                        count: 4)
         }
         var info: [RankingInfo] = []
         for (i, value) in resultInfo.wrappedValue.enumerated() {
@@ -39,7 +42,7 @@ struct ResultView: View {
     private var rows: [GridItem]
     
     private var columnCount: Int {
-        (rankingInfo.count == 2 || rankingInfo.count == 3) ? 1 : 2
+        (rankingInfo.count < 4) ? 1 : 2
     }
     
     private func isUnderLineDisabled(_ num: Int) -> Bool {
@@ -50,8 +53,12 @@ struct ResultView: View {
             return num == 2 || num == 4
         } else if rankingInfo.count == 5 {
             return num == 3 || num == 5
-        } else {
+        } else if rankingInfo.count == 6 {
             return num == 3 || num == 6
+        } else if rankingInfo.count == 7 {
+            return num == 4 || num == 7
+        } else {
+            return num == 4 || num == 8
         }
     }
     
@@ -61,8 +68,10 @@ struct ResultView: View {
             return num == 1
         } else if rankingInfo.count == 4 {
             return num == 1 || num == 3
-        } else {
+        } else if rankingInfo.count == 5 || rankingInfo.count == 6 {
             return num == 1 || num == 4
+        } else {
+            return num == 1 || num == 5
         }
     }
     
@@ -79,8 +88,10 @@ struct ResultView: View {
             return "five"
         } else if num == 6 {
             return "six"
+        } else if num == 7 {
+            return "seven"
         } else {
-            return "one"
+            return "eight"
         }
     }
     
