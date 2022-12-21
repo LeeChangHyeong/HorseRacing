@@ -28,7 +28,6 @@ struct GameStartView: View {
             
             VStack {
                 HStack {
-                    
                     Button {
                         showCreditView = true
                     } label: {
@@ -40,7 +39,6 @@ struct GameStartView: View {
                         CreditView()
                     }
                     .padding()
-                    
                     
                     Spacer()
                     

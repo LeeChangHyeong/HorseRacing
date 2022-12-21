@@ -83,7 +83,6 @@ struct GameProcessingView: View {
 
 // MARK: Horse Running Animation SpriteKit Scene
 class HorseRunningScene: SKScene {
-    
     let backgroundStart = SKSpriteNode(imageNamed: "backgroundStart")
     let backgroundMiddle = SKSpriteNode(imageNamed: "backgroundMiddle")
     
@@ -150,7 +149,6 @@ class HorseRunningScene: SKScene {
             }
         }
     }
-    
     
     // horse Atlas를 생성
     func buildHorse(number: Int) {

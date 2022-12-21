@@ -216,8 +216,6 @@ struct ResultView: View {
             }
             .padding(.horizontal, 60)
             .padding(.vertical, 38)
-            
-            
         }
         .ignoresSafeArea()
     }
@@ -328,17 +326,6 @@ struct ResultView: View {
         }
     }
 }
-
-//struct ResultView_Previews: PreviewProvider {
-//
-//    private static var info = [108, 42, 50]
-//
-//    static var previews: some View {
-//        ResultView(mode: .constant(.Rank), resultInfo: .constant(info), horseNames: <#Binding<[String]>#>)
-//            .previewDevice(PreviewDevice(rawValue: "iPhone 13"))
-//            .previewInterfaceOrientation(.landscapeLeft)
-//    }
-//}
 
 struct SizePreferenceKey: PreferenceKey {
     static var defaultValue: CGSize = .zero
