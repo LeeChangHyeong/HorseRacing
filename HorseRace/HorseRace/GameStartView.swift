@@ -12,11 +12,10 @@ struct GameStartView: View {
     @Binding var horseCount: Int
     @Binding var horseNames: [String]
     
-
     let startButtonSound = SoundSetting(forResouce: "startButtonSound", withExtension: "wav")
     let changeButtonSound = SoundSetting(forResouce: "changeSound", withExtension: "wav")
     let negativeSound = SoundSetting(forResouce: "negativeSound", withExtension: "wav")
-
+    
     @State private var showCreditView = false
     
     var body: some View {
@@ -29,7 +28,6 @@ struct GameStartView: View {
             
             VStack {
                 HStack {
-                    
                     Button {
                         showCreditView = true
                     } label: {
@@ -41,7 +39,6 @@ struct GameStartView: View {
                         CreditView()
                     }
                     .padding()
-
                     
                     Spacer()
                     
@@ -91,6 +88,10 @@ struct GameStartView: View {
                 }
                 .padding()
                 
+                Text("말의 이름을 터치하여 말의 이름을 변경할 수 있습니다!")
+                    .font(.system(size: 20, weight: .heavy))
+                    .foregroundColor(Color("startBtnColor"))
+                
                 Spacer()
                 
                 HStack(spacing: 0) {
@@ -99,8 +100,12 @@ struct GameStartView: View {
                             Image("horse\(num)").resizable()
                                 .frame(maxHeight: 200, alignment: .center)
                                 .scaledToFit()
-                    
-                                TextField("\(num)번마", text: $horseNames[num - 1])
+                            
+                            TextField("", text: $horseNames[num - 1])
+                                .placeholder(when: horseNames[num - 1].isEmpty) {
+                                    Text("\(num)번마")
+                                        .foregroundColor(.white)
+                                }
                                 .multilineTextAlignment(.center)
                         }
                     }
@@ -137,4 +142,17 @@ struct GameStartView: View {
             self.endTextEditing()
         }
     }
+}
+
+extension View {
+    func placeholder<Content: View>(
+        when shouldShow: Bool,
+        alignment: Alignment = .center,
+        @ViewBuilder placeholder: () -> Content) -> some View {
+            
+            ZStack(alignment: alignment) {
+                placeholder().opacity(shouldShow ? 1 : 0)
+                self
+            }
+        }
 }
