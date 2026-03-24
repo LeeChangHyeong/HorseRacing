@@ -11,7 +11,7 @@ import SpriteKit
 struct FinalGameProcessingView: View {
     @Binding var mode: Mode
     @Binding var horseCount: Int
-    @Binding var resultInfo: [Int]
+    @Binding var resultInfo: [Double]
     
     let horseSoundSetting = SoundSetting(forResouce: "HorseGallop", withExtension: "m4a")
     
@@ -34,7 +34,7 @@ class FinalHorseRunningScene: SKScene {
     
     let backgroundFinish = SKSpriteNode(imageNamed: "backgroundFinish")
     private var horseArray: [SKSpriteNode?] = []
-    var randomSecond: [Int] = []
+    var randomSecond: [Double] = []
     var getResult: () -> Void = {}
     
     private var horseRunningFrames: [SKTexture] = []
@@ -49,7 +49,7 @@ class FinalHorseRunningScene: SKScene {
     }
     
     // 말 마리 수를 받아 올 수 있는 initializer
-    convenience init(size: CGSize, horseCount: Int, randomSecond: [Int]) {
+    convenience init(size: CGSize, horseCount: Int, randomSecond: [Double]) {
         self.init(size: size)
         self.horseCount = horseCount
         self.randomSecond = randomSecond

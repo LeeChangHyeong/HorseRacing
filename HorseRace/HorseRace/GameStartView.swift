@@ -17,6 +17,7 @@ struct GameStartView: View {
     let negativeSound = SoundSetting(forResouce: "negativeSound", withExtension: "wav")
     
     @State private var showCreditView = false
+    @FocusState private var focusedHorse: Int?
     
     var body: some View {
         ZStack {
@@ -43,7 +44,7 @@ struct GameStartView: View {
                     Spacer()
                     
                     Button {
-                        if horseCount > 2 {
+                        if horseCount > GameConfig.minHorseCount {
                             changeButtonSound.playSound()
                             horseCount -= 1
                         } else {
@@ -68,7 +69,7 @@ struct GameStartView: View {
                         .padding(.top, 25)
                     
                     Button {
-                        if horseCount < 8 {
+                        if horseCount < GameConfig.maxHorseCount {
                             changeButtonSound.playSound()
                             horseCount += 1
                         } else {
@@ -102,7 +103,8 @@ struct GameStartView: View {
                                 .scaledToFit()
                             
                             TextField("", text: $horseNames[num - 1])
-                                .placeholder(when: horseNames[num - 1].isEmpty) {
+                                .focused($focusedHorse, equals: num)
+                                .placeholder(when: horseNames[num - 1].isEmpty && focusedHorse != num) {
                                     Text("\(num)번마")
                                         .foregroundColor(.white)
                                 }

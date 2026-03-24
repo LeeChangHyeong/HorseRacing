@@ -12,36 +12,44 @@ struct ResultView: View {
     let restartButtonSound = SoundSetting(forResouce: "startButtonSound", withExtension: "wav")
     
     @Binding var mode: Mode
-    @Binding var resultInfo: [Int]
+    @Binding var resultInfo: [Double]
     @Binding var horseNames: [String]
     
-    typealias RankingInfo = (horseNum: Int, second: Float)
+    typealias RankingInfo = (horseNum: Int, second: Double)
     @State private var capsuleWidth: CGFloat = .zero
     @State private var circleWidth: CGFloat = .zero
     
-    init(mode: Binding<Mode>, resultInfo: Binding<[Int]>, horseNames: Binding<[String]>) {
+    init(mode: Binding<Mode>, resultInfo: Binding<[Double]>, horseNames: Binding<[String]>) {
         self._mode = mode
         self._resultInfo = resultInfo
         self._horseNames = horseNames
-        if resultInfo.count == 2 || resultInfo.count == 4 {
-            self.rows = Array<GridItem>(repeating: GridItem(.flexible(), spacing: 8, alignment: .leading),
-                                        count: 2)
-        } else if resultInfo.count == 3 || resultInfo.count == 5 || resultInfo.count == 6 {
-            self.rows = Array<GridItem>(repeating: GridItem(.flexible(), spacing: 8, alignment: .leading),
-                                        count: 3)
-        } else {
-            self.rows = Array<GridItem>(repeating: GridItem(.flexible(), spacing: 8, alignment: .leading),
-                                        count: 4)
-        }
+        let rowCount = (resultInfo.count + 1) / 2
+        self.rows = Array<GridItem>(repeating: GridItem(.flexible(), spacing: 8, alignment: .leading),
+                                    count: rowCount)
         var info: [RankingInfo] = []
         for (i, value) in resultInfo.wrappedValue.enumerated() {
-            info.append(RankingInfo(horseNum: i, second: Float(value) / 60.0))
+            info.append(RankingInfo(horseNum: i, second: value / 60.0))
         }
-        
-        self.rankingInfo = info.sorted { $0.second < $1.second }
+
+        let sorted = info.sorted { $0.second < $1.second }
+        self.rankingInfo = sorted
+
+        // ms 단위까지 동일하게 표시되는 쌍 찾기
+        var duplicates: Set<Int> = []
+        for i in 0..<sorted.count {
+            for j in (i+1)..<sorted.count {
+                if ResultView.formatTime(sorted[i].second, precise: false)
+                    == ResultView.formatTime(sorted[j].second, precise: false) {
+                    duplicates.insert(i)
+                    duplicates.insert(j)
+                }
+            }
+        }
+        self.preciseIndices = duplicates
     }
     
     private let rankingInfo: [RankingInfo]
+    private let preciseIndices: Set<Int>
     private var rows: [GridItem]
     
     private var columnCount: Int {
@@ -50,52 +58,31 @@ struct ResultView: View {
     
     private func isUnderLineDisabled(_ num: Int) -> Bool {
         let num = num + 1
-        if rankingInfo.count < 4 {
-            return num == rankingInfo.count
-        } else if rankingInfo.count == 4 {
-            return num == 2 || num == 4
-        } else if rankingInfo.count == 5 {
-            return num == 3 || num == 5
-        } else if rankingInfo.count == 6 {
-            return num == 3 || num == 6
-        } else if rankingInfo.count == 7 {
-            return num == 4 || num == 7
+        let count = rankingInfo.count
+        if count < 4 {
+            return num == count
         } else {
-            return num == 4 || num == 8
+            let leftCount = (count + 1) / 2
+            return num == leftCount || num == count
         }
     }
     
     private func isDashboardDisabled(_ num: Int) -> Bool {
         let num = num + 1
-        if rankingInfo.count < 4 {
+        let count = rankingInfo.count
+        if count < 4 {
             return num == 1
-        } else if rankingInfo.count == 4 {
-            return num == 1 || num == 3
-        } else if rankingInfo.count == 5 || rankingInfo.count == 6 {
-            return num == 1 || num == 4
         } else {
-            return num == 1 || num == 5
+            let leftCount = (count + 1) / 2
+            return num == 1 || num == leftCount + 1
         }
     }
     
+    private static let numberWords = ["one", "two", "three", "four", "five", "six", "seven", "eight"]
+
     private func numString(_ num: Int) -> String {
-        if num == 1 {
-            return "one"
-        } else if num == 2 {
-            return "two"
-        } else if num == 3 {
-            return "three"
-        } else if num == 4 {
-            return "four"
-        } else if num == 5 {
-            return "five"
-        } else if num == 6 {
-            return "six"
-        } else if num == 7 {
-            return "seven"
-        } else {
-            return "eight"
-        }
+        guard num >= 1, num <= Self.numberWords.count else { return "one" }
+        return Self.numberWords[num - 1]
     }
     
     @State private var gridWidth: CGFloat = 0
@@ -153,33 +140,34 @@ struct ResultView: View {
                                 .onPreferenceChange(SizePreferenceKey.self) { size in
                                     circleWidth = size.width
                                 }
-                            
+
                             HStack(spacing: 0) {
                                 Image("horse\(num+1)\(rankingInfo.count < 4 ? "byOne" : "byTwo")")
                                     .resizable()
                                     .scaledToFit()
                                     .clipShape(Capsule())
-                                
+
                                 Spacer()
-                                
+
                                 HStack(spacing: 0) {
                                     Text(horseNames[num] == "" ? "\(num + 1)번마" : "\(horseNames[num])")
                                         .bold()
                                         .lineLimit(1)
                                         .minimumScaleFactor(0.6)
                                         .foregroundColor(Color(hex: "481B15"))
-                                    
+
                                     Spacer()
-                                    
-                                    Text(getTimeLiteral(second))
-                                        .font(.subheadline)
+
+                                    Text(ResultView.formatTime(second, precise: preciseIndices.contains(ranking)))
+                                        .font(preciseIndices.contains(ranking) ? .caption : .subheadline)
                                         .bold()
                                         .multilineTextAlignment(.leading)
                                         .lineLimit(1)
+                                        .minimumScaleFactor(0.8)
                                         .foregroundColor(Color(hex: "481B15"))
                                         .padding(.trailing, 30)
                                         .frame(width: 100)
-                                    
+
                                 }
                             }
                             .frame(minWidth: 180, maxWidth: 280, maxHeight: 65)
@@ -220,108 +208,59 @@ struct ResultView: View {
         .ignoresSafeArea()
     }
     
-    private func getTimeLiteral(_ second: Float) -> String {
+    private static func formatTime(_ second: Double, precise: Bool) -> String {
         let value = second + 10
-        let second = Int(value)
-        let millisecond = value - Float(second)
-        return String(second) + "s " + String(format: "%.2f", millisecond).dropFirst(2) + "ms"
+        let sec = Int(value)
+        let millisecond = value - Double(sec)
+        if precise {
+            let raw = String(format: "%.3f", millisecond).dropFirst(2)
+            return String(sec) + "s " + String(raw) + "ms"
+        } else {
+            return String(sec) + "s " + String(format: "%.2f", millisecond).dropFirst(2) + "ms"
+        }
     }
     
     struct RankingGridView<ItemView: View>: View {
         
         var num: Int
         var rankingInfo: [RankingInfo]
-        let content: (Int, Int, Float) -> ItemView
-        
-        init(num: Int, rankingInfo: [RankingInfo], @ViewBuilder content: @escaping (Int, Int, Float) -> ItemView) {
+        let content: (Int, Int, Double) -> ItemView
+
+        init(num: Int, rankingInfo: [RankingInfo], @ViewBuilder content: @escaping (Int, Int, Double) -> ItemView) {
             self.num = num
             self.content = content
             self.rankingInfo = rankingInfo
         }
         
+        private var leftCount: Int { (num + 1) / 2 }
+        private var rightCount: Int { num - leftCount }
+        private var needsPlaceholder: Bool { num >= 4 && rightCount < leftCount }
+
         var body: some View {
-            if num == 2 {
+            if num < 4 {
                 VStack(spacing: 15) {
                     ForEach(0..<num, id: \.self) { i in
                         content(i, rankingInfo[i].horseNum, rankingInfo[i].second)
                     }
                 }
-            } else if num == 3 {
-                VStack(spacing: 15) {
-                    ForEach(0..<3, id: \.self) { i in
-                        content(i, rankingInfo[i].horseNum, rankingInfo[i].second)
-                    }
-                }
-            } else if num == 4 {
+            } else {
                 HStack(alignment: .top, spacing: 20) {
-                    VStack(spacing: 15) {
-                        ForEach(0..<2, id: \.self) { i in
+                    VStack(spacing: num == 4 ? 15 : 8) {
+                        ForEach(0..<leftCount, id: \.self) { i in
                             content(i, rankingInfo[i].horseNum, rankingInfo[i].second)
                         }
                     }
-                    VStack(spacing: 15) {
-                        ForEach(2..<4, id: \.self) { i in
+                    VStack(spacing: num == 4 ? 15 : 8) {
+                        ForEach(leftCount..<num, id: \.self) { i in
                             content(i, rankingInfo[i].horseNum, rankingInfo[i].second)
                         }
-                    }
-                }
-                .padding([.bottom, .vertical], 16)
-            } else if num == 5 {
-                HStack(alignment: .top, spacing: 20) {
-                    VStack(spacing: 8) {
-                        ForEach(0..<3, id: \.self) { i in
-                            content(i, rankingInfo[i].horseNum, rankingInfo[i].second)
-                        }
-                    }
-                    VStack(spacing: 8) {
-                        ForEach(3..<5, id: \.self) { i in
-                            content(i, rankingInfo[i].horseNum, rankingInfo[i].second)
-                        }
-                        content(0, rankingInfo[0].horseNum, rankingInfo[0].second)
-                            .opacity(0)
-                    }
-                }
-            } else if num == 6 {
-                HStack(alignment: .top, spacing: 20) {
-                    VStack(spacing: 8) {
-                        ForEach(0..<3, id: \.self) { i in
-                            content(i, rankingInfo[i].horseNum, rankingInfo[i].second)
-                        }
-                    }
-                    VStack(spacing: 8) {
-                        ForEach(3..<6, id: \.self) { i in
-                            content(i, rankingInfo[i].horseNum, rankingInfo[i].second)
+                        if needsPlaceholder {
+                            content(0, rankingInfo[0].horseNum, rankingInfo[0].second)
+                                .opacity(0)
                         }
                     }
                 }
-            } else if num == 7 {
-                HStack(alignment: .top, spacing: 20) {
-                    VStack(spacing: 8) {
-                        ForEach(0..<4, id: \.self) { i in
-                            content(i, rankingInfo[i].horseNum, rankingInfo[i].second)
-                        }
-                    }
-                    VStack(spacing: 8) {
-                        ForEach(4..<7, id: \.self) { i in
-                            content(i, rankingInfo[i].horseNum, rankingInfo[i].second)
-                        }
-                        content(0, rankingInfo[0].horseNum, rankingInfo[0].second)
-                            .opacity(0)
-                    }
-                }
-            } else if num == 8 {
-                HStack(alignment: .top, spacing: 20) {
-                    VStack(spacing: 8) {
-                        ForEach(0..<4, id: \.self) { i in
-                            content(i, rankingInfo[i].horseNum, rankingInfo[i].second)
-                        }
-                    }
-                    VStack(spacing: 8) {
-                        ForEach(4..<8, id: \.self) { i in
-                            content(i, rankingInfo[i].horseNum, rankingInfo[i].second)
-                        }
-                    }
-                }
+                .padding(num == 4 ? [.bottom, .vertical] : [], num == 4 ? 16 : 0)
             }
         }
     }
